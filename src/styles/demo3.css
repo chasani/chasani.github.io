@@ -1,0 +1,319 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Original+Surfer&family=Paprika&display=swap');
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+    --text-color: hsl(0, 0%, 95%);
+    --text-color-medium: hsl(0, 0%, 25%);
+    --text-color-dark: hsl(0, 0%, 10%);
+    --text-color-accent: hsl(240, 40%, 60%);
+    --bg-color-banana: hsl(48, 94%, 60%);
+    --bg-color-mango: hsl(78, 66%, 60%);
+    --bg-color-water-apple: hsl(0, 55%, 51%);
+    --bg-color-sugar-apple: hsl(269, 57%, 67%);
+
+
+    --active-fruit-color: hsl(from var(--bg-color-banana) h s l);
+    --button-color: hsl(from var(--active-fruit-color) h s 50%);
+    --button-color-hover: hsl(from var(--button-color)h s 67%);
+    --button-box-shadow-color: hsl(from var(--button-color) h s 35%);
+    --body-color: hsl(from var(--active-fruit-color) h s l);
+    --link-hover-color: var(--button-color);
+
+    /* spacing */
+    --padding-100: 1rem;
+    --padding-150: 1.5rem;
+    --padding-200: 2rem;
+
+    /* Size */
+    --height-500: 5rem;
+    --height-600: 6rem;
+
+    --size-300: 3rem;
+    --size-200: 2rem;
+
+    /* fonts */
+    --body-font: Inter, sans-serif;
+    --font-size: 1.5rem;
+    --font-title-size: 3rem;
+    --font-description: 1.25rem;
+}
+
+/*=============== BASE ===============*/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    transition: all .5s ease;
+
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body,
+button {
+    font-family: var(--body-font);
+    font-size: var(--font-size);
+}
+
+body {
+    background-color: var(--body-color);
+    color: var(--text-color);
+
+}
+
+button {
+    border: none;
+    outline: none;
+
+}
+
+h1,
+h2,
+h3,
+h4 {
+    color: var(--title-color);
+    font-weight: var(--font-bold);
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    /* height: auto; */
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.wrapper {
+    max-width: 1120px;
+    margin: var(--padding-150);
+}
+
+
+
+/* Header and Nav */
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+
+.nav__wrapper {
+    display: flex;
+    justify-content: space-between;
+    max-height: var(--height-600);
+    max-width: 100%;
+    align-items: center;
+    background-color: transparent;
+
+}
+
+
+.nav__list {
+    display: flex;
+    gap: var(--size-300);
+    font-family: Paprika, sans-serif;
+    font-weight: bold;
+    text-shadow: 0 .2rem .1rem black;
+
+}
+
+i {
+    font-size: var(--font-title-size);
+}
+
+.nav__close,
+.nav__hamburger {
+    display: none;
+    cursor: pointer;
+
+}
+
+
+.nav__list a:hover {
+    color: var(--link-hover-color);
+}
+
+.nav__list a.active-link {
+    color: var(--link-hover-color);
+}
+
+
+
+@media screen and (max-width:64em) {
+    .nav__list {
+        display: grid;
+        justify-content: center;
+    }
+
+    .nav__menu {
+        position: fixed;
+        top: 0%;
+        right: -100%;
+        width: 40%;
+        height: 100%;
+        transition: right .4s;
+
+    }
+
+    .nav__close,
+    .nav__hamburger {
+        display: block;
+    }
+
+
+    .button {
+        position: fixed;
+        right: 2%;
+        bottom: 10%;
+
+    }
+
+    .nav__menu:before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-color: hsla(140, 0%, 97%, .025);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        z-index: -1;
+    }
+
+
+    .show-menu {
+        right: 0%;
+    }
+}
+
+
+.logo__img {
+    height: 90px;
+    border-radius: 100vw;
+}
+
+.button {
+    width: 10rem;
+    padding: var(--padding-100) var(--padding-200);
+    border-radius: .5rem;
+    background-color: var(--button-color);
+    cursor: pointer;
+    color: var(--text-color);
+    box-shadow: 0 1rem 1rem -.3rem var(--button-box-shadow-color);
+}
+
+.button:hover {
+    background-color: var(--button-color-hover);
+}
+
+
+/* hero Section */
+
+.hero {
+    height: 100vh;
+    height: 100svh;
+    max-width: 100%;
+    position: relative;
+    overflow: hidden;
+
+
+}
+
+.hero__img {
+    min-height: 100vh;
+    width: 100%;
+    object-fit: cover;
+    /* display: inline-flex; */
+    transition: all 1s ease-in;
+
+}
+
+@starting-style {
+    .hero__img {
+        transform: translateY(-2rem);
+        opacity: 0;
+    }
+}
+
+.hero__card {
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    transition: opacity 2s ease-in 1s;
+
+}
+
+@starting-style {
+    .hero__card {
+        opacity: 0;
+
+    }
+}
+
+
+h1 {
+    color: var(--text-color-dark);
+    margin-bottom: var(--size-200);
+    font-size: var(--font-title-size);
+}
+
+p {
+    color: var(--text-color-medium);
+    font-size: var(--font-description);
+    font-weight: bold;
+    width: 30ch;
+}
+
+
+/* showing fruits */
+
+
+.fruit {
+    position: absolute;
+    opacity: 0;
+}
+
+.active-fruit {
+    z-index: 1;
+    animation: fade 1s ease-in forwards;
+}
+
+
+@keyframes fade {
+    from {
+        transform: translateY(-2rem);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+}
+
+/* footer */
+.footer__copy {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    font-size: var(--font-description);
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+
+}

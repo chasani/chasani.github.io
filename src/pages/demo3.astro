@@ -1,0 +1,117 @@
+---
+import "../styles/demo3.css";
+import marketLogo from "../assets/market/logo-2-sm.png";
+import banana from "../assets/market/banana.png";
+import mango from "../assets/market/mango.png";
+import waterApple from "../assets/market/water-apple.png";
+import sugarApple from "../assets/market/sugar-apple.png";
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content={Astro.generator} />
+        <script src="../scripts/demo3.js"></script>
+
+        <!--=============== REMIXICONS ===============-->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.7.0/remixicon.css"
+        />
+
+        <title>Zane's Market</title>
+    </head>
+    <body>
+        <header>
+            <div class="nav__wrapper wrapper">
+                <a href="" class="logo">
+                    <img src={marketLogo.src} alt="" class="logo__img" />
+                </a>
+                <nav class="nav__menu" id="nav-menu">
+                    <div class="nav__close" id="nav-close">
+                        <i class="ri-close-line"></i>
+                    </div>
+                    <div class="nav__background"></div>
+                    <ul class="nav__list">
+                        <li>
+                            <a
+                                href="#nav-menu"
+                                data-fruit="banana"
+                                class="active-link">Banana</a
+                            >
+                        </li>
+                        <li>
+                            <a href="#nav-menu" data-fruit="mango">Mango</a>
+                        </li>
+                        <li>
+                            <a href="#nav-menu" data-fruit="water-apple"
+                                >Water Apple</a
+                            >
+                        </li>
+                        <li>
+                            <a href="#nav-menu" data-fruit="sugar-apple"
+                                >Sugar Apple</a
+                            >
+                        </li>
+                    </ul>
+                </nav>
+                <button class="button">Get Now</button>
+                <div class="nav__hamburger" id="nav-hamburger">
+                    <i class="ri-menu-fill"></i>
+                </div>
+            </div>
+        </header>
+
+        <section class="hero">
+            <!-- fruit 4 -->
+            <div class="fruit" id="sugar-apple">
+                <article class="hero__card">
+                    <h1 class="title">Sugar Apple</h1>
+                    <p class="description">
+                        So sweet and delicious, even honey bees can resist!
+                    </p>
+                </article>
+                <img src={sugarApple.src} alt="" class="hero__img" />
+            </div>
+            <!-- fruit 3 -->
+            <div class="fruit" id="water-apple">
+                <article class="hero__card">
+                    <h1 class="title">Water Apple</h1>
+                    <p class="description">
+                        One bite can revitalize you in an instant!
+                    </p>
+                </article>
+                <img src={waterApple.src} alt="" class="hero__img" />
+            </div>
+            <!-- fruit 2 -->
+            <div class="fruit" id="mango">
+                <article class="hero__card">
+                    <h1 class="title">Mango</h1>
+                    <p class="description">
+                        Fleashy and succulent the nana is pleasure for the
+                        tongue!
+                    </p>
+                </article>
+                <img src={mango.src} alt="" class="hero__img" />
+            </div>
+            <!-- fruit 1 -->
+            <div class="fruit active-fruit" id="banana">
+                <article class="hero__card">
+                    <h1 class="title">Sweet Bananas</h1>
+                    <p class="description">
+                        So creamy and delightful with flavour right out of
+                        heaven!
+                    </p>
+                </article>
+                <img src={banana.src} alt="" class="hero__img" />
+            </div>
+        </section>
+        <footer>
+            <div class="footer__copy">
+                &#169; All Rights Reserved By T.Hunte
+            </div>
+        </footer>
+    </body>
+</html>

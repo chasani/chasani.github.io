@@ -1,0 +1,42 @@
+---
+import LinkNav from "./Link_nav_p.astro";
+import Hamburger from "./hamburger_p.astro";
+---
+
+<header
+    class="fixed min-w-full top-0 z-50 bg-white/95 dark:bg-dark-background/95 backdrop-blur-sm shadow-sm transition-all duration-300"
+>
+    <div class="container mx-auto px-4">
+        <nav class="flex justify-between items-center py-4">
+            <div class="flex items-center">
+                <span class="text-xl font-extrabold">Trevor Hunte</span>
+                <span class="text-primary text-2xl ml-1">&bull;</span>
+            </div>
+            <ul class="hidden md:flex space-x-8">
+                <li>
+                    <LinkNav href="#features">Showcase</LinkNav>
+                </li>
+                <li>
+                    <LinkNav href="#projects">Projects</LinkNav>
+                </li>
+                <li>
+                    <LinkNav href="#skills">Skills</LinkNav>
+                </li>
+
+                <li>
+                    <LinkNav href="#about">About</LinkNav>
+                </li>
+                <li>
+                    <LinkNav href="#contact">Contact</LinkNav>
+                </li>
+            </ul>
+            <div class="flex items-center space-x-4">
+                <button id="themeToggle" class="">
+                    <i class="fa-solid fa-moon text-gray-600 dark:text-gray-300"
+                    ></i>
+                </button>
+                <Hamburger />
+            </div>
+        </nav>
+    </div>
+</header>

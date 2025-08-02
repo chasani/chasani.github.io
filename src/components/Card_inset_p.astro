@@ -1,0 +1,26 @@
+---
+
+---
+
+<style>
+    div {
+        /* border: 1px solid #e8e8e8; */
+        transition: all 0.5s ease-in-out;
+    }
+
+    /* div:hover {
+        box-shadow:
+            6px 6px 12px #c5c5c5,
+            -6px -6px 12px #ffffff;
+        background-color: #ffffff;
+        transform: scale3d(1.05, 1.05, 1.05) translate3d(0, -1rem, 0);
+    } */
+</style>
+
+<div
+    class="dark:bg-dark-background-tertiary p-8 hover:shadow-[inset_6px_6px_12px_#c5c5c5,inset_-6px_-6px_12px_#ffffff] bg-white hover:scale-105 hover:-translate-y-4
+    rounded-lg shadow-[inset_4px_4px_12px_#c5c5c5,inset_-4px_-4px_12px_#ffffff]
+    dark:shadow-[inset_4px_4px_0px_#000000,inset_-4px_-4px_0px_#000000] dark:hover:shadow-lg dark:hover:scale-x-105 dark:hover:-translate-y-4"
+>
+    <slot />
+</div>
