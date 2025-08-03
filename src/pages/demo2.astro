@@ -219,10 +219,7 @@ import showWindow from "../assets/bakery/show-window-bg.png";
                             <h3 class="favorite__price">$6.00</h3>
                         </div>
 
-                        <button
-                            class="favorite__button button"
-                            data-treat="donut"
-                        >
+                        <button class="favorite__button button">
                             <i class="ri-add-line"></i>
                         </button>
                     </article>
@@ -241,10 +238,7 @@ import showWindow from "../assets/bakery/show-window-bg.png";
                             <h3 class="favorite__price">$8.00</h3>
                         </div>
 
-                        <button
-                            class="favorite__button button"
-                            data-treat="raw-cake"
-                        >
+                        <button class="favorite__button button">
                             <i class="ri-add-line"></i>
                         </button>
                     </article>
@@ -263,10 +257,7 @@ import showWindow from "../assets/bakery/show-window-bg.png";
                             <h3 class="favorite__price">$3.00</h3>
                         </div>
 
-                        <button
-                            class="favorite__button button"
-                            data-treat="sweet-bread"
-                        >
+                        <button class="favorite__button button">
                             <i class="ri-add-line"></i>
                         </button>
                     </article>
@@ -287,10 +278,7 @@ import showWindow from "../assets/bakery/show-window-bg.png";
                             <h3 class="favorite__price">$5.00</h3>
                         </div>
 
-                        <button
-                            class="favorite__button button"
-                            data-treat="parte"
-                        >
+                        <button class="favorite__button button">
                             <i class="ri-add-line"></i>
                         </button>
                     </article>
@@ -305,16 +293,17 @@ import showWindow from "../assets/bakery/show-window-bg.png";
                             <h3 class="favorite__price">$7.00</h3>
                         </div>
 
-                        <button
-                            class="favorite__button button"
-                            data-treat="pone"
-                        >
+                        <button class="favorite__button button">
                             <i class="ri-add-line"></i>
                         </button>
                     </article>
                     <!-- fav 6 -->
                     <article class="favorite__card">
-                        <img src={bun.src} alt="image" class="favorite__img" />
+                        <img
+                            src=`${bun.src}`
+                            alt="image"
+                            class="favorite__img"
+                        />
 
                         <div class="favorite__data">
                             <h2 class="favorite__title">Bun</h2>
@@ -323,10 +312,7 @@ import showWindow from "../assets/bakery/show-window-bg.png";
                             <h3 class="favorite__price">$3.00</h3>
                         </div>
 
-                        <button
-                            class="favorite__button button"
-                            data-treat="bun"
-                        >
+                        <button class="favorite__button button">
                             <i class="ri-add-line"></i>
                         </button>
                     </article>
@@ -347,7 +333,7 @@ import showWindow from "../assets/bakery/show-window-bg.png";
                                 <input
                                     type="number"
                                     class="number"
-                                    id="amonut"
+                                    id="amount"
                                 />
                             </div>
                             <div>
@@ -363,7 +349,7 @@ import showWindow from "../assets/bakery/show-window-bg.png";
                     </div>
                     <div class="purchase__item">
                         <img
-                            src=""
+                            src=``
                             alt="image"
                             class="purchase__image"
                             id="purchase-image"

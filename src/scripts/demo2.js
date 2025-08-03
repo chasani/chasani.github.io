@@ -139,10 +139,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     favoriteBtns.forEach(fBtn => {
         fBtn.addEventListener('click', () => {
-            const treat = fBtn.getAttribute('data-treat')
-            const imgUrl = `/src/assets/bakery/${treat}.png`
-            purchaseCard.querySelector('.purchase__image').setAttribute('src', imgUrl)
-            console.log(treat)
+            const treat = fBtn.parentElement.querySelector(".favorite__img").getAttribute('src')
+            // console.info(treat)
+
+            purchaseCard.querySelector('.purchase__image').setAttribute('src', treat)
             purchaseCard.classList.add('show')
         })
     })
