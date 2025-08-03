@@ -25,4 +25,17 @@ pnpm-debug.log*
 
 
 # ignore pages, CSS and javascript for local use only
-src/pages/master.asto
+src/pages/master.astro
+src/pages/bakery.html
+src/pages/clip_path.astro
+src/pages/index_default.astro
+src/pages/manage.html
+src/pages/scroll.html
+src/pages/scroller.astro
+src/scripts/manage.js
+src/scripts/master.js
+src/styles/bakery.css
+src/styles/manage.css
+
+# vscode
+.vscode/
