@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const header = document.querySelector('header')
         // when scroll is greater than 50 viewport height add the scroll -header class to the header tag
 
-        this.scrollY >= 50 ? header.classList.add('blur-header') : header.classList.remove('blur-header')
+        window.scrollY >= 50 ? header.classList.add('blur-header') : header.classList.remove('blur-header')
     }
 
     window.addEventListener('scroll', blurHeader)
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const scrollup = document.querySelector('#scrollup')
         // when scroll is greater than 350 viewport height add the show-scroll class to the scroll link
 
-        this.scrollY >= 350 ? scrollup.classList.add('show-scroll') : scrollup.classList.remove('show-scroll')
+        window.scrollY >= 350 ? scrollup.classList.add('show-scroll') : scrollup.classList.remove('show-scroll')
     }
 
     window.addEventListener('scroll', scrollup)
@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     })
 
-    favImgs = document.querySelectorAll('.favorite__img')
+    const favImgs = document.querySelectorAll('.favorite__img')
 
     favImgs.forEach(favImg => {
 
