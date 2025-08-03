@@ -25,4 +25,4 @@ pnpm-debug.log*
 
 
 # ignore pages, CSS and javascript for local use only
-src/pages/master.asto
+/src/pages/master.asto
