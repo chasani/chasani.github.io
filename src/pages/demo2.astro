@@ -1,0 +1,471 @@
+---
+import "../styles/demo2.css";
+import counterCake from "../assets/bakery/counter-cake.png";
+import counterBg from "../assets/bakery/counter-bg.jpg";
+import wheatbread from "../assets/bakery/wheat-bread.png";
+import coconutSlice from "../assets/bakery/coconut-slice.png";
+import puffPastry from "../assets/bakery/puff-pastry.png";
+import baker from "../assets/bakery/baker.png";
+import donut from "../assets/bakery/donut.png";
+import rawCake from "../assets/bakery/raw-cake.png";
+import sweetBread from "../assets/bakery/Sweet-Bread.png";
+import parte from "../assets/bakery/parte.png";
+import pone from "../assets/bakery/pone.png";
+import bun from "../assets/bakery/bun.png";
+import showWindow from "../assets/bakery/show-window-bg.png";
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content={Astro.generator} />
+        <script src="../scripts/demo2.js"></script>
+
+        <!--=============== FAVICON ===============-->
+        <link
+            rel="shortcut icon"
+            href="assets/img/favicon.png"
+            type="image/x-icon"
+        />
+
+        <!--=============== REMIXICONS ===============-->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.7.0/remixicon.css"
+        />
+
+        <!--=============== CSS ===============-->
+
+        <title>Zane's Bakery</title>
+    </head>
+    <body>
+        <!--==================== HEADER ====================-->
+        <header class="header" id="header">
+            <nav class="nav container">
+                <a href="#" class="nav__logo">Zane's Bakery</a>
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="#home" class="nav__link active-link">
+                                Home
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#new" class="nav__link"> News </a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#about" class="nav__link"> About Us </a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#favorite" class="nav__link">
+                                Favorites
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#visit" class="nav__link"> Location </a>
+                        </li>
+                    </ul>
+                    <!-- Close Button -->
+                    <div class="nav__close" id="nav-close">
+                        <i class="ri-close-line"></i>
+                    </div>
+                </div>
+                <!-- Toggle Button -->
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="ri-menu-fill"></i>
+                </div>
+            </nav>
+        </header>
+
+        <!--==================== MAIN ====================-->
+        <main class="main">
+            <!--==================== HOME ====================-->
+            <section class="home section" id="home">
+                <img src={counterBg.src} alt="" class="home__bg" />
+                <div class="home__shadow"></div>
+                <div class="home__container container grid">
+                    <div class="home__data">
+                        <h1 class="home__title">
+                            Select The Best <br /> Quality Treats.
+                        </h1>
+                        <a href="#new" class="button">Select Treats</a>
+                    </div>
+
+                    <div class="home__image">
+                        <img src={counterCake.src} alt="" class="home__img" />
+                    </div>
+
+                    <footer class="home__footer">
+                        <div class="home__location">
+                            <i class="ri-map-pin-line"> </i>
+                            <span>
+                                Hill Twenty 20 <br /> Castries St.Lucia
+                            </span>
+                        </div>
+
+                        <div class="home__social">
+                            <a href="https://www.facebook.com/" target="_blank">
+                                <i class="ri-facebook-circle-line"></i>
+                            </a>
+                            <a
+                                href="https://www.instagram.com/"
+                                target="_blank"
+                            >
+                                <i class="ri-instagram-line"></i>
+                            </a>
+                            <a href="https://www.youtube.com/" target="_blank">
+                                <i class="ri-youtube-line"></i>
+                            </a>
+                        </div>
+                    </footer>
+                </div>
+            </section>
+
+            <!--==================== NEWS ====================-->
+            <section class="new section" id="new">
+                <h2 class="section__title">New Treats</h2>
+                <div class="new__container container grid">
+                    <div class="new__content grid">
+                        <!-- Article 1 -->
+                        <article class="new__card">
+                            <div class="new__data">
+                                <h2 class="new__title">Wheat Bread</h2>
+                                <p class="new__description">
+                                    Baked with healthy, gluten-free sourdough
+                                    for good nutrition.
+                                </p>
+                            </div>
+                            <img
+                                src={wheatbread.src}
+                                alt="image"
+                                class="new__img"
+                            />
+                        </article>
+                        <!-- Article 2 -->
+                        <article class="new__card">
+                            <div class="new__data">
+                                <h2 class="new__title">Coconut Slice</h2>
+                                <p class="new__description">
+                                    Crispy and homemade prepared from organic
+                                    yeast-free flour.
+                                </p>
+                            </div>
+                            <img
+                                src={coconutSlice.src}
+                                alt="image"
+                                class="new__img"
+                            />
+                        </article>
+                        <!-- Article 3 -->
+                        <article class="new__card">
+                            <div class="new__data">
+                                <h2 class="new__title">Puff Pastry</h2>
+                                <p class="new__description">
+                                    Tasty and made with different natural fruits
+                                    from the countryside.
+                                </p>
+                            </div>
+                            <img
+                                src={puffPastry.src}
+                                alt="image"
+                                class="new__img"
+                            />
+                        </article>
+                    </div>
+                    <a href="#favorite" class="button new__button"
+                        >See Pastries</a
+                    >
+                </div>
+            </section>
+
+            <!--==================== ABOUT ====================-->
+            <section class="about section" id="about">
+                <div class="about__container container grid">
+                    <div class="about__data">
+                        <h2 class="section__title">About Us</h2>
+                        <p class="about__description">
+                            We create all types of bread, cakes and pastries
+                            that are made at home. Using only the best
+                            ingredients made with local products whenever
+                            possible. We have an extensive line of freshly
+                            prepared bakery and coffee products.
+                        </p>
+
+                        <a href="#" class="button">Know More</a>
+                    </div>
+                    <img src={baker.src} alt="image" class="about__img" />
+                </div>
+            </section>
+
+            <!--==================== FAVORITES ====================-->
+            <section class="favorite section" id="favorite">
+                <h2 class="section__title">Customer favorites</h2>
+
+                <div class="favorite__container container grid">
+                    <!-- fav 1 -->
+                    <article class="favorite__card">
+                        <img
+                            src={donut.src}
+                            alt="image"
+                            class="favorite__img"
+                        />
+
+                        <div class="favorite__data">
+                            <h2 class="favorite__title">Donut</h2>
+
+                            <span class="favorite__subtitle"> Bread </span>
+                            <h3 class="favorite__price">$6.00</h3>
+                        </div>
+
+                        <button
+                            class="favorite__button button"
+                            data-treat="donut"
+                        >
+                            <i class="ri-add-line"></i>
+                        </button>
+                    </article>
+                    <!-- fav 2 -->
+                    <article class="favorite__card">
+                        <img
+                            src={rawCake.src}
+                            alt="image"
+                            class="favorite__img"
+                        />
+
+                        <div class="favorite__data">
+                            <h2 class="favorite__title">Raw Cake</h2>
+
+                            <span class="favorite__subtitle">Cake </span>
+                            <h3 class="favorite__price">$8.00</h3>
+                        </div>
+
+                        <button
+                            class="favorite__button button"
+                            data-treat="raw-cake"
+                        >
+                            <i class="ri-add-line"></i>
+                        </button>
+                    </article>
+                    <!-- fav 3 -->
+                    <article class="favorite__card">
+                        <img
+                            src={sweetBread.src}
+                            alt="image"
+                            class="favorite__img"
+                        />
+
+                        <div class="favorite__data">
+                            <h2 class="favorite__title">Sweet bread</h2>
+
+                            <span class="favorite__subtitle"> Bread </span>
+                            <h3 class="favorite__price">$3.00</h3>
+                        </div>
+
+                        <button
+                            class="favorite__button button"
+                            data-treat="sweet-bread"
+                        >
+                            <i class="ri-add-line"></i>
+                        </button>
+                    </article>
+                    <!-- fav 4 -->
+                    <article class="favorite__card">
+                        <img
+                            src={parte.src}
+                            alt="image"
+                            class="favorite__img"
+                        />
+
+                        <div class="favorite__data">
+                            <h2 class="favorite__title">Parte</h2>
+
+                            <span class="favorite__subtitle">
+                                Meat Pastry
+                            </span>
+                            <h3 class="favorite__price">$5.00</h3>
+                        </div>
+
+                        <button
+                            class="favorite__button button"
+                            data-treat="parte"
+                        >
+                            <i class="ri-add-line"></i>
+                        </button>
+                    </article>
+                    <!-- fav 5 -->
+                    <article class="favorite__card">
+                        <img src={pone.src} alt="image" class="favorite__img" />
+
+                        <div class="favorite__data">
+                            <h2 class="favorite__title">Pone</h2>
+
+                            <span class="favorite__subtitle"> Bread </span>
+                            <h3 class="favorite__price">$7.00</h3>
+                        </div>
+
+                        <button
+                            class="favorite__button button"
+                            data-treat="pone"
+                        >
+                            <i class="ri-add-line"></i>
+                        </button>
+                    </article>
+                    <!-- fav 6 -->
+                    <article class="favorite__card">
+                        <img src={bun.src} alt="image" class="favorite__img" />
+
+                        <div class="favorite__data">
+                            <h2 class="favorite__title">Bun</h2>
+
+                            <span class="favorite__subtitle"> Bread </span>
+                            <h3 class="favorite__price">$3.00</h3>
+                        </div>
+
+                        <button
+                            class="favorite__button button"
+                            data-treat="bun"
+                        >
+                            <i class="ri-add-line"></i>
+                        </button>
+                    </article>
+                </div>
+
+                <div class="purchase__card" id="purchase-card">
+                    <div class="add__item">
+                        <div class="purchase__subtitle">Bread</div>
+                        <h2 class="purchase__title">Bun</h2>
+                        <h3 class="purchase__price">$3.00</h3>
+                        <p>
+                            Sample our tasty treats, baked freash with all
+                            natural ingredients
+                        </p>
+                        <form action="">
+                            <div>
+                                <label for="amount">Amount</label>
+                                <input
+                                    type="number"
+                                    class="number"
+                                    id="amonut"
+                                />
+                            </div>
+                            <div>
+                                <a class="button purchase__button">
+                                    <i class="ri-shopping-cart-2-line"></i>
+                                    Add to cart
+                                </a>
+                                <span class="purchase__close">
+                                    <i class="ri-close-circle-line"></i>
+                                </span>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="purchase__item">
+                        <img
+                            src=""
+                            alt="image"
+                            class="purchase__image"
+                            id="purchase-image"
+                        />
+                    </div>
+                </div>
+            </section>
+
+            <!--==================== VISIT ====================-->
+            <section class="visit section" id="visit">
+                <div class="visit__container">
+                    <img src={showWindow.src} alt="image" class="visit__bg" />
+                    <div class="visit__shadow"></div>
+
+                    <div class="visit__container container grid">
+                        <div class="visit__data">
+                            <h2 class="section__title">Visit Us</h2>
+                            <p class="visit__description">
+                                Discover the best Pastries, we look forward to
+                                your visit.
+                            </p>
+                            <a href="#footer" class="button">See Location</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!--==================== FOOTER ====================-->
+        <footer class="footer" id="footer">
+            <div class="footer__container container grid">
+                <div>
+                    <a href="#" class="footer__logo">bakery</a>
+                    <p class="footer__description">
+                        We make the best bread <br /> in the city.
+                    </p>
+                </div>
+                <div class="footer__content grid">
+                    <!-- foot content 1 -->
+                    <div>
+                        <h3 class="footer__title">Address</h3>
+                        <ul class="footer__list">
+                            <li>
+                                <address class="footer__info">
+                                    Hill Twenty<br /> Castries St. Lucia
+                                </address>
+                            </li>
+                            <li>
+                                <address class="footer__info">
+                                    9AM - 11PM
+                                </address>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- footer content 2 -->
+                    <div>
+                        <h3 class="footer__title">Contact Me</h3>
+                        <ul class="footer__list">
+                            <li>
+                                <address class="footer__info">
+                                    zane@bakery.com
+                                </address>
+                            </li>
+                            <li>
+                                <address class="footer__info">
+                                    +1 758 654 321
+                                </address>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- footer content 3 -->
+                    <div>
+                        <h3 class="footer__title">Follow Us</h3>
+                        <div class="footer__social">
+                            <a href="https://www.facebook.com/" target="_blank">
+                                <i class="ri-facebook-circle-line"></i>
+                            </a>
+                            <a
+                                href="https://www.instagram.com/"
+                                target="_blank"
+                            >
+                                <i class="ri-instagram-line"></i>
+                            </a>
+                            <a href="https://www.youtube.com/" target="_blank">
+                                <i class="ri-youtube-line"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <span class="footer__copy">
+                &#169; All Rights Reserved By T.Hunte
+            </span>
+        </footer>
+
+        <!--========== SCROLL UP ==========-->
+        <a href="#" class="scrollup" id="scrollup">
+            <i class="ri-arrow-up-line"></i>
+        </a>
+
+        <!--=============== SCROLLREVEAL ===============-->
+
+        <!--=============== MAIN JS ===============-->
+    </body>
+</html>
