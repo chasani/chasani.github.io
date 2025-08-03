@@ -34,26 +34,28 @@ import MobileMenuP from "../components/mobile_menu_p.astro";
 
 		<title>ClayTown</title>
 	</head>
-	<body
-		class="font-sans text-gray-900 dark:text-white bg-white dark:bg-dark-background transition-colors duration-300"
-	>
-		<!-- Dark mode background gradients -->
+	<body>
 		<div
-			class="fixed inset-0 -z-10 opacity-0 dark:opacity-100 transition-opacity duration-500 pointer-events-none"
+			class="font-sans text-gray-900 dark:text-white bg-white dark:bg-dark-background transition-colors duration-300"
 		>
+			<!-- Dark mode background gradients -->
 			<div
-				class="absolute inset-0 bg-gradiant-to-br from-primary/10 via-transparent to-secondary/10"
+				class="fixed inset-0 -z-10 opacity-0 dark:opacity-100 transition-opacity duration-500 pointer-events-none"
 			>
-				now
+				<div
+					class="absolute inset-0 bg-gradiant-to-br from-primary/10 via-transparent to-secondary/10"
+				>
+					now
+				</div>
 			</div>
+			<!-- END -->
+
+			<!-- header -->
+			<Header_p />
+			<MobileMenuP />
+
+			<slot />
 		</div>
-		<!-- END -->
-
-		<!-- header -->
-		<Header_p />
-		<MobileMenuP />
-
-		<slot />
 	</body>
 </html>
 
