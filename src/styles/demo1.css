@@ -976,6 +976,10 @@ p[data-width="wide"] {
     background-color: var(--clr-accent-400);
 }
 
+.a11y-slider-autoplay {
+    display: none;
+}
+
 
 
 .carousel-btn {
