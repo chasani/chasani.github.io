@@ -7,7 +7,7 @@ import tailwind from '@astrojs/tailwind';
 export default defineConfig({
     // ...
     site: 'https://chasani.github.io',
-    base: '',
+    base: 'https://chasani.github.io',
     integrations: [tailwind({
         // nesting: true,
         applyBaseStyles: false,
