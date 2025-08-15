@@ -232,12 +232,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const marketfruits = ["banana", "mango", "water-apple", "sugar-apple"]
 
+    const banana = {
+        _id: "banana",
+        vid: "",
+        thumb_1: `https://chasani.github.io/_astro/banana-thumb-1.BPrnxREf.png`,
+        thumb_2: `/src/assets/market/banana-thumb-2.png?origWidth=2048&origHeight=2048&origFormat=png`,
+        thumb_3: `/src/assets/market/banana-thumb-3.png?origWidth=2048&origHeight=2048&origFormat=png`,
+        thumb_4: `/src/assets/market/${fruit}-thumb-4.png?origWidth=2048&origHeight=2048&origFormat=png`,
+        title: fruit.replace('-', ' '),
+        description: document.querySelector(`#${fruit}`).querySelector('.description').innerHTML,
+        price: parseInt(document.querySelector(`#${fruit}`).getAttribute('data-price')),
+        amount: 0,
+        in_cart: false
+    }
+
+    const mango = {
+        _id: "mango",
+        vid: "",
+        thumb_1: `https://chasani.github.io/_astro/banana-thumb-1.BPrnxREf.png`,
+        thumb_2: `/src/assets/market/banana-thumb-2.png?origWidth=2048&origHeight=2048&origFormat=png`,
+        thumb_3: `/src/assets/market/banana-thumb-3.png?origWidth=2048&origHeight=2048&origFormat=png`,
+        thumb_4: `/src/assets/market/${fruit}-thumb-4.png?origWidth=2048&origHeight=2048&origFormat=png`,
+        title: fruit.replace('-', ' '),
+        description: document.querySelector(`#${fruit}`).querySelector('.description').innerHTML,
+        price: parseInt(document.querySelector(`#${fruit}`).getAttribute('data-price')),
+        amount: 0,
+        in_cart: false
+    }
+
+
     function createItem(fruit) {
         const item = {
             // _id: new Date().toISOString(),
             _id: fruit,
             vid: `/_astro/assets/market/${fruit}-vid.mp4`,
-            thumb_1: `/_astro/assets/market/${fruit}-thumb-1.png?origWidth=2048&origHeight=2048&origFormat=png`,
+            thumb_1: `https://chasani.github.io/src/${fruit}-thumb-1.png`,
             thumb_2: `/src/assets/market/${fruit}-thumb-2.png?origWidth=2048&origHeight=2048&origFormat=png`,
             thumb_3: `/src/assets/market/${fruit}-thumb-3.png?origWidth=2048&origHeight=2048&origFormat=png`,
             thumb_4: `/src/assets/market/${fruit}-thumb-4.png?origWidth=2048&origHeight=2048&origFormat=png`,
