@@ -236,8 +236,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const item = {
             // _id: new Date().toISOString(),
             _id: fruit,
-            vid: `/src/assets/market/${fruit}-vid.mp4`,
-            thumb_1: `/src/assets/market/${fruit}-thumb-1.png?origWidth=2048&origHeight=2048&origFormat=png`,
+            vid: `/_astro/assets/market/${fruit}-vid.mp4`,
+            thumb_1: `/_astro/assets/market/${fruit}-thumb-1.png?origWidth=2048&origHeight=2048&origFormat=png`,
             thumb_2: `/src/assets/market/${fruit}-thumb-2.png?origWidth=2048&origHeight=2048&origFormat=png`,
             thumb_3: `/src/assets/market/${fruit}-thumb-3.png?origWidth=2048&origHeight=2048&origFormat=png`,
             thumb_4: `/src/assets/market/${fruit}-thumb-4.png?origWidth=2048&origHeight=2048&origFormat=png`,
@@ -336,12 +336,11 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
 
-
+    deleteAllItems(marketfruits)
     loadDatabase(marketfruits)
     updateCartBubble()
     //createItem("mango")
     // deleteItem("mango")
-    //deleteAllItems(marketfruits)
     showCart()
 
 })
