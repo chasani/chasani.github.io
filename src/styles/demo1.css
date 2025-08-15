@@ -315,6 +315,12 @@ input:where([type="text"], [type="email"]) {
     border-radius: 100vw;
     padding: var(--size-300) var(--size-400);
     border: 0;
+
+}
+
+input:focus {
+    color: var(--clr-accent-400);
+    outline-color: var(--clr-accent-400);
 }
 
 
@@ -410,6 +416,11 @@ input:where([type="text"], [type="email"]) {
         grid-row: 1 / span 1;
 
     }
+}
+
+
+main {
+    /* position: relative; */
 }
 
 /* hero image */
@@ -616,12 +627,24 @@ input:where([type="text"], [type="email"]) {
     font-size: var(--fs-600);
 }
 
+.fs-700 {
+    font-size: var(--fs-700);
+}
+
 .padding-block-900 {
     padding-block: var(--size-900);
 }
 
 .padding-block-700 {
     padding-block: var(--size-700);
+}
+
+.padding-block-600 {
+    padding-block: var(--size-600);
+}
+
+.padding-block-500 {
+    padding-block: var(--size-500);
 }
 
 .margin-bottom-700 {
@@ -984,4 +1007,119 @@ p[data-width="wide"] {
 
 .carousel-btn {
     margin-top: 2rem;
+}
+
+
+
+/* register form */
+.register-form {
+    max-width: min(100%, 40rem);
+    /* height: 50rem; */
+    position: sticky;
+    top: 5rem;
+    margin-inline: auto;
+    padding: 1.5rem;
+    background-color: var(--clr-neutral-900);
+    color: var(--clr-neutral-200);
+    border-radius: var(--size-300);
+    z-index: 3;
+    display: none;
+
+
+}
+
+.register-form .form-close {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.register-form .form-close i {
+    font-size: var(--fs-700);
+    cursor: pointer;
+}
+
+.register-form .form-close i:hover {
+    color: var(--clr-accent-500);
+}
+
+
+
+.register-form form {
+
+    display: flex;
+    /* flex-direction: column; */
+    width: 100%;
+    justify-content: space-around;
+
+}
+
+.register-form form div {
+    display: grid;
+    /* grid-template-columns: auto auto; */
+    gap: .5rem;
+}
+
+.register-form select {
+    border-radius: 100vw;
+    padding: var(--size-300) var(--size-400);
+    border: 0;
+}
+
+.register-form input {
+    margin-bottom: 1.5rem;
+}
+
+@media screen and (max-width:47em) {
+
+    .register-form form {
+        flex-direction: column;
+        top: 0;
+    }
+
+
+    .register-form form div:last-child {
+        grid-template-columns: auto auto;
+        margin-top: 1rem;
+    }
+
+}
+
+.price-card {
+
+    border: 0;
+    border-radius: var(--size-300);
+    padding: var(--size-500);
+    background-color: var(--clr-neutral-900);
+    color: var(--clr-neutral-100);
+
+
+}
+
+.price-card:nth-child(2) {
+    background-color: var(--clr-accent-400);
+    color: var(--clr-neutral-100);
+    scale: 1.1;
+
+}
+
+
+.price-card p,
+.price-card h1 {
+    border-bottom: 1px solid lightgray;
+    /* padding: var(--size-200) 0; */
+}
+
+.price-card button {
+    margin-top: var(--size-500);
+    box-shadow: none;
+}
+
+
+@media screen and (max-width:47em) {
+    .price-card:nth-child(2) {
+        scale: 1;
+    }
+
 }

@@ -47,4 +47,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
     });
 
+    // register form
+
+    const getStartedBtns = document.querySelectorAll('.get-started')
+    const form = document.querySelector('.register-form')
+
+
+    getStartedBtns.forEach(gStartbtn => {
+        gStartbtn.addEventListener('click', () => {
+            form.style.display = "block"
+        })
+    })
+
+
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        form.style.display = "none"
+    })
+
+    document.querySelector('.form-close i').addEventListener('click', () => {
+        form.style.display = "none"
+    })
+
 })

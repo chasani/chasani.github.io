@@ -28,6 +28,11 @@ import closeIcon from "../assets/manage_landing_page/icon-close.svg";
             href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
             rel="stylesheet"
         />
+
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.7.0/remixicon.css"
+        />
         <script src="../scripts/demo1.js"></script>
         <!-- <link rel="stylesheet" href="../styles/demo1.css" /> -->
 
@@ -77,11 +82,11 @@ import closeIcon from "../assets/manage_landing_page/icon-close.svg";
                             <li><a href="#home">Home</a></li>
                             <li><a href="#tutoring">Tutoring</a></li>
                             <li><a href="#testimonials">Testimonials</a></li>
-                            <li><a href="#">Pricing</a></li>
+                            <li><a href="#pricing">Pricing</a></li>
                             <li><a href="#contact">Contact</a></li>
                         </ul>
                     </nav>
-                    <button class="button display-md-inline-block"
+                    <button class="button get-started display-md-inline-block"
                         >Get Started</button
                     >
                 </div>
@@ -90,6 +95,75 @@ import closeIcon from "../assets/manage_landing_page/icon-close.svg";
 
         <!-- Main -->
         <main>
+            <!-- registration form -->
+            <div class="register-form">
+                <div class="form-close" id="form-close">
+                    <h2 class="fs-secondary-heading fw-bold">Register Child</h2>
+                    <i class="ri-close-line"></i>
+                </div>
+                <form action="">
+                    <div>
+                        <label for="p-name">Parent's Name</label>
+                        <input type="text" id="p-name" />
+                        <label for="p-email">Parent's Email</label>
+                        <input type="email" id="p-email" />
+                        <label for="c-name">Child's Name</label>
+                        <input type="text" id="c-name" />
+
+                        <label for="grade">Choose Grade</label>
+                        <select name="" id="grade">
+                            <option value="grade_1">Grade 1</option>
+                            <option value="grade_2">Grade 2</option>
+                            <option value="grade_3">Grade 3</option>
+                            <option value="grade_4">Grade 4</option>
+                            <option value="grade_5">Grade 5</option>
+                            <option value="grade_6">Grade 6</option>
+                        </select>
+                    </div>
+                    <div>
+                        <span>
+                            <input type="checkbox" value="math" id="math" />
+                            <label for="math">Math</label>
+                        </span>
+                        <span>
+                            <input
+                                type="checkbox"
+                                value="science"
+                                id="science"
+                            />
+                            <label for="science">Science</label>
+                        </span>
+                        <span>
+                            <input
+                                type="checkbox"
+                                value="language"
+                                id="language"
+                            />
+                            <label for="language">Language Arts</label>
+                        </span>
+                        <span>
+                            <input type="checkbox" value="social" id="social" />
+                            <label for="social">Social Studies</label>
+                        </span>
+                        <span>
+                            <input
+                                type="checkbox"
+                                value="general"
+                                id="general"
+                            />
+                            <label for="general">General</label>
+                        </span>
+                        <button
+                            type="submit"
+                            class="button"
+                            id="register"
+                            data-shadow="none"
+                        >
+                            Register</button
+                        >
+                    </div>
+                </form>
+            </div>
             <!-- Hero Section -->
             <section
                 class="hero | text-center-sm-only padding-block-700"
@@ -106,7 +180,9 @@ import closeIcon from "../assets/manage_landing_page/icon-close.svg";
                                 AI tutor makes it simple for easy for your child
                                 to excel in every discipline.
                             </p>
-                            <button class="button">Get Started</button>
+                            <button class="button get-started"
+                                >Get Started</button
+                            >
                         </div>
 
                         <!-- Hero Image -->
@@ -277,9 +353,84 @@ import closeIcon from "../assets/manage_landing_page/icon-close.svg";
                         <div class="sider-card-shade"></div>
                     </li>
                 </ul>
-                <button class="button carousel-btn">Get Started</button>
+                <button class="button carousel-btn get-started"
+                    >Get Started</button
+                >
             </section>
             <!-- Carousel End -->
+
+            <!-- Pricing Section -->
+            <section class="pricing padding-block-700" id="pricing">
+                <div class="contain">
+                    <h2
+                        class="fs-secondary-heading fw-bold txt-center margin-bottom-700"
+                    >
+                        Choose Your Plan
+                    </h2>
+
+                    <div class="even-columns">
+                        <!-- Card 1 -->
+                        <div class="price-card txt-center">
+                            <h3 class="fs-700 fw-bold">Teacher</h3>
+                            <h1 class="fs-primary-heading padding-block-500">
+                                $25/m
+                            </h1>
+                            <p class="txt-center padding-block-500">
+                                Weekly Assignments
+                            </p>
+                            <p class="txt-center padding-block-500">
+                                Weekly Tutoring
+                            </p>
+                            <p class="txt-center padding-block-500"></p>
+                            <p class="txt-center padding-block-500"></p>
+                            <button class="button">Select</button>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="price-card txt-center">
+                            <h3 class="fs-700 fw-bold">Scholar</h3>
+                            <h1 class="fs-primary-heading padding-block-500">
+                                $50/m
+                            </h1>
+                            <p class="txt-center padding-block-500">
+                                Weekly Assignments
+                            </p>
+                            <p class="txt-center padding-block-500">
+                                Daily Tutoring
+                            </p>
+                            <p class="txt-center padding-block-500">
+                                Focused Lesson Plans
+                            </p>
+                            <p class="txt-center padding-block-500"></p>
+                            <button class="button" data-type="inverted"
+                                >Select</button
+                            >
+                        </div>
+                        <!-- Card 3 -->
+                        <div class="price-card txt-center">
+                            <h3 class="fs-700 fw-bold">Nobel</h3>
+                            <h1 class="fs-primary-heading padding-block-500">
+                                $100/m
+                            </h1>
+                            <p class="txt-center padding-block-500">
+                                Weekly Assignments
+                            </p>
+                            <p class="txt-center padding-block-500">
+                                Daily Tutoring
+                            </p>
+                            <p class="txt-center padding-block-500">
+                                Personalised Lesson Plans
+                            </p>
+                            <p class="txt-center padding-block-500">
+                                24 Hour Support
+                            </p>
+                            <button class="button">Select</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pricing End -->
 
             <!-- Call To Action -->
             <section
@@ -293,105 +444,107 @@ import closeIcon from "../assets/manage_landing_page/icon-close.svg";
                             </p>
                         </div>
                         <div class="justify-self-end-md">
-                            <button class="button" data-type="inverted"
-                                >Get Started</button
+                            <button
+                                class="button get-started"
+                                data-type="inverted">Get Started</button
                             >
                         </div>
                     </div>
                 </div>
             </section>
             <!-- Call To Action End -->
-        </main>
-        <!-- footer -->
-        <footer
-            class="primary-footer | bkg-neutral-900 txt-neutral-100 padding-block-700"
-            id="contact"
-        >
-            <div class="contain">
-                <div class="even-columns">
-                    <div class="primary-footer-logo-social">
-                        <a href="#" aria-label="home">
-                            <img src={tutorBg.src} alt="" />
-                        </a>
-                        <ul
-                            role="list"
-                            aria-label="Social Links"
-                            class="social-list"
-                        >
-                            <li>
-                                <!-- <a aria-label="Facebook" href="">
+            <!-- footer -->
+            <footer
+                class="primary-footer | bkg-neutral-900 txt-neutral-100 padding-block-700"
+                id="contact"
+            >
+                <div class="contain">
+                    <div class="even-columns">
+                        <div class="primary-footer-logo-social">
+                            <a href="#" aria-label="home">
+                                <img src={tutorBg.src} alt="" />
+                            </a>
+                            <ul
+                                role="list"
+                                aria-label="Social Links"
+                                class="social-list"
+                            >
+                                <li>
+                                    <!-- <a aria-label="Facebook" href="">
                                     <svg class="social-icon">
                                         <use xlink:href={facebook}></use>
                                     </svg>
                                 </a> -->
-                            </li>
-                            <li>
-                                <!-- <a aria-label="YouTube" href="">
+                                </li>
+                                <li>
+                                    <!-- <a aria-label="YouTube" href="">
                                     <svg class="social-icon">
                                         <use xlink:href={youtube}></use>
                                     </svg>
                                 </a> -->
-                            </li>
-                            <li>
-                                <!-- <a aria-label="Twitter" href="">
+                                </li>
+                                <li>
+                                    <!-- <a aria-label="Twitter" href="">
                                     <svg class="social-icon">
                                         <use xlink:href={instagram}></use>
                                     </svg>
                                 </a> -->
-                            </li>
-                            <li>
-                                <!-- <a aria-label="Pinterest" href="">
+                                </li>
+                                <li>
+                                    <!-- <a aria-label="Pinterest" href="">
                                     <svg class="social-icon">
                                         <use xlink:href={pinteres}></use>
                                     </svg>
                                 </a> -->
-                            </li>
-                            <li>
-                                <!-- <a aria-label="Instagram" href="">
+                                </li>
+                                <li>
+                                    <!-- <a aria-label="Instagram" href="">
                                     <svg class="social-icon">
                                         <use xlink:href={twitter}></use>
                                     </svg>
                                 </a> -->
-                            </li>
-                        </ul>
-                        <p data-copywrite="small-screen">
-                            Copyright 2020. All Rights Reserved
-                        </p>
-                    </div>
-                    <div>
-                        <nav aria-label="Footer" class="footer-nav">
-                            <ul
-                                class="flow"
-                                style="--flow-spacer:1em"
-                                role="list"
-                            >
-                                <li><a href="#home">Home</a></li>
-                                <li><a href="#tutoring">Tutoring</a></li>
-                                <li>
-                                    <a href="#testimonials">Testimonials</a>
                                 </li>
-                                <li><a href="#">Pricing</a></li>
-                                <li><a href="#contact">Contact</a></li>
                             </ul>
-                        </nav>
-                    </div>
-                    <div class="primary-footer-form">
-                        <form action="">
-                            <input
-                                type="email"
-                                name=""
-                                id=""
-                                placeholder="name@email.com"
-                            />
-                            <button class="button" data-shadow="none">Go</button
-                            >
-                        </form>
-                        <p data-copywrite="large-screen">
-                            &#169; All Rights Reserved By T.Hunte
-                        </p>
+                            <p data-copywrite="small-screen">
+                                Copyright 2020. All Rights Reserved
+                            </p>
+                        </div>
+                        <div>
+                            <nav aria-label="Footer" class="footer-nav">
+                                <ul
+                                    class="flow"
+                                    style="--flow-spacer:1em"
+                                    role="list"
+                                >
+                                    <li><a href="#home">Home</a></li>
+                                    <li><a href="#tutoring">Tutoring</a></li>
+                                    <li>
+                                        <a href="#testimonials">Testimonials</a>
+                                    </li>
+                                    <li><a href="#pricing">Pricing</a></li>
+                                    <li><a href="#contact">Contact</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="primary-footer-form">
+                            <form action="">
+                                <input
+                                    type="email"
+                                    name=""
+                                    id=""
+                                    placeholder="name@email.com"
+                                />
+                                <button class="button" data-shadow="none"
+                                    >Contact</button
+                                >
+                            </form>
+                            <p data-copywrite="large-screen">
+                                &#169; All Rights Reserved By T.Hunte
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </footer>
+            </footer>
+        </main>
     </body>
 </html>

@@ -2,9 +2,17 @@
 import "../styles/demo3.css";
 import marketLogo from "../assets/market/logo-2-sm.png";
 import banana from "../assets/market/banana.png";
+import bananaThumb1 from "../assets/market/banana-thumb-1.png";
+import bananaThumb2 from "../assets/market/banana-thumb-2.png";
+import bananaThumb3 from "../assets/market/banana-thumb-3.png";
+import bananaThumb4 from "../assets/market/banana-thumb-4.png";
 import mango from "../assets/market/mango.png";
 import waterApple from "../assets/market/water-apple.png";
 import sugarApple from "../assets/market/sugar-apple.png";
+import sugarAppleVid from "../assets/market/sugar-apple1.mp4";
+
+import mangoVid from "../assets/market/mango-vid.mp4";
+import waterAppleVid from "../assets/market/water-apple-vid.mp4";
 ---
 
 <!doctype html>
@@ -20,6 +28,11 @@ import sugarApple from "../assets/market/sugar-apple.png";
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.7.0/remixicon.css"
         />
+
+        <!--=============== Database ===============-->
+        <script
+            src="https://cdn.jsdelivr.net/npm/pouchdb@9.0.0/dist/pouchdb.min.js"
+        ></script>
 
         <title>Zane's Market</title>
     </head>
@@ -57,7 +70,13 @@ import sugarApple from "../assets/market/sugar-apple.png";
                         </li>
                     </ul>
                 </nav>
-                <button class="button">Get Now</button>
+                <div class="shop__group">
+                    <div>
+                        <i class="ri-shopping-cart-line"></i>
+                        <span>7</span>
+                    </div>
+                    <button class="button" data-type="get">Buy Now</button>
+                </div>
                 <div class="nav__hamburger" id="nav-hamburger">
                     <i class="ri-menu-fill"></i>
                 </div>
@@ -65,8 +84,93 @@ import sugarApple from "../assets/market/sugar-apple.png";
         </header>
 
         <section class="hero">
+            <div class="shopping__cart">
+                <div class="cart__heading">
+                    <h1>Shopping Cart</h1>
+                    <i class="ri-close-line"></i>
+                </div>
+                <ul class="cart__list">
+                    <!-- Cart fruit 1 -->
+                    <li id="banana-incart">
+                        <div class="cart__img">
+                            <img src={banana.src} alt="" />
+                        </div>
+                        <div class="cart__details">
+                            <h1 class="title">Ripe Bananas</h1>
+                            <p class="description">
+                                So creamy and delightful with flavour right out
+                                of heaven!
+                            </p>
+                            <div class="cart__options">
+                                <span>x</span><span id="value">0</span>
+                                <button class="button" data-type="delete"
+                                    >remove</button
+                                >
+                            </div>
+                        </div>
+                    </li>
+                    <!-- Cart fruit 2 -->
+                    <li id="mango-incart">
+                        <div class="cart__img">
+                            <img src={mango.src} alt="" />
+                        </div>
+                        <div class="cart__details">
+                            <h1 class="title">Mangos</h1>
+                            <p class="description">
+                                Fleashy and succulent the nana is pleasure for
+                                the tongue!
+                            </p>
+                            <div class="cart__options">
+                                <span>x</span><span id="value">0</span>
+                                <button class="button" data-type="delete"
+                                    >remove</button
+                                >
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- Cart fruit 3 -->
+                    <li id="water-apple-incart">
+                        <div class="cart__img">
+                            <img src={waterApple.src} alt="" />
+                        </div>
+                        <div class="cart__details">
+                            <h1 class="title">Water Apples</h1>
+                            <p class="description">
+                                One bite can revitalize you in an instant!
+                            </p>
+                            <div class="cart__options">
+                                <span>x</span><span id="value">0</span>
+                                <button class="button" data-type="delete"
+                                    >remove</button
+                                >
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- Cart fruit 4 -->
+                    <li id="sugar-apple-incart">
+                        <div class="cart__img">
+                            <img src={sugarApple.src} alt="" />
+                        </div>
+                        <div class="cart__details">
+                            <h1 class="title">Sugar Apples</h1>
+                            <p class="description">
+                                So sweet and delicious, even honey bees can
+                                resist!
+                            </p>
+                            <div class="cart__options">
+                                <span>x</span><span id="value">0</span>
+                                <button class="button" data-type="delete"
+                                    >remove</button
+                                >
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
             <!-- fruit 4 -->
-            <div class="fruit" id="sugar-apple">
+            <div class="fruit" id="sugar-apple" data-price="5">
                 <article class="hero__card">
                     <h1 class="title">Sugar Apple</h1>
                     <p class="description">
@@ -76,7 +180,7 @@ import sugarApple from "../assets/market/sugar-apple.png";
                 <img src={sugarApple.src} alt="" class="hero__img" />
             </div>
             <!-- fruit 3 -->
-            <div class="fruit" id="water-apple">
+            <div class="fruit" id="water-apple" data-price="4">
                 <article class="hero__card">
                     <h1 class="title">Water Apple</h1>
                     <p class="description">
@@ -84,9 +188,11 @@ import sugarApple from "../assets/market/sugar-apple.png";
                     </p>
                 </article>
                 <img src={waterApple.src} alt="" class="hero__img" />
+                <!-- <video src={waterAppleVid} class="hero__img" autoplay muted loop
+                ></video> -->
             </div>
             <!-- fruit 2 -->
-            <div class="fruit" id="mango">
+            <div class="fruit" id="mango" data-price="3">
                 <article class="hero__card">
                     <h1 class="title">Mango</h1>
                     <p class="description">
@@ -97,15 +203,93 @@ import sugarApple from "../assets/market/sugar-apple.png";
                 <img src={mango.src} alt="" class="hero__img" />
             </div>
             <!-- fruit 1 -->
-            <div class="fruit active-fruit" id="banana">
+            <div class="fruit active-fruit" id="banana" data-price="2">
                 <article class="hero__card">
-                    <h1 class="title">Sweet Bananas</h1>
+                    <h1 class="title">Ripe Bananas</h1>
                     <p class="description">
                         So creamy and delightful with flavour right out of
                         heaven!
                     </p>
                 </article>
                 <img src={banana.src} alt="" class="hero__img" />
+            </div>
+
+            <!-- Order Card -->
+            <div class="order__card" id="order-card">
+                <div class="close__card">
+                    <i class="ri-close-line"></i>
+                </div>
+                <div class="content">
+                    <div class="product">
+                        <div class="show__window">
+                            <video src="" muted autoplay width="400px"></video>
+                            <img src="" alt="" />
+                        </div>
+                        <div class="show__items">
+                            <ul>
+                                <li>
+                                    <img
+                                        width="75px"
+                                        height="75px"
+                                        src=""
+                                        alt="image 1"
+                                        id="image-1"
+                                    />
+                                </li>
+                                <li>
+                                    <img
+                                        width="75px"
+                                        height="75px"
+                                        src=""
+                                        alt="image 2"
+                                        id="image-2"
+                                    />
+                                </li>
+                                <li>
+                                    <img
+                                        width="75px"
+                                        height="75px"
+                                        src=""
+                                        alt="image 3"
+                                        id="image-3"
+                                    />
+                                </li>
+                                <li>
+                                    <img
+                                        width="75px"
+                                        height="75px"
+                                        src=""
+                                        alt="image 4"
+                                        id="image-4"
+                                    />
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="product__details">
+                        <h5 id="owner">Zane's Garden</h5>
+                        <h1 id="title"></h1>
+                        <p id="desc"></p>
+                        <pre id="price"></pre>
+                        <div>
+                            <span class="pricing__group" id="pricing-group">
+                                <label for="number" data-sign="minus">-</label>
+                                <input
+                                    type="number"
+                                    id="purchase-number"
+                                    value="0"
+                                />
+                                <label for="number" data-sign="plus">+</label>
+                            </span>
+                            <button
+                                type="submit"
+                                class="button"
+                                id="cart-btn"
+                                data-type="cart">Add to cart</button
+                            >
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
         <footer>

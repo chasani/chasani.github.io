@@ -158,4 +158,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+    // Pouch Database setup and usage. PS. i stopped was not needed in forsight
+
+    // // create database
+    // const db = new PouchDB('Bakery');
+    // const remoteCouch = false
+
+    // // Add items to database
+    // function addItem(text, price) {
+    //     const item = {
+    //         _id: new Date().toISOString(),
+    //         name: text,
+    //         price: price
+    //     };
+    //     db.put(item, function callback(err, result) {
+    //         if (!err) {
+    //             console.log('Successfully posted a todo!');
+    //         }
+    //     });
+    // }
+
+
+    // function showCart() {
+    //     db.allDocs({ include_docs: true, descending: true }, function (err, doc) {
+    //         console.info(doc.rows);
+    //     });
+    // }
+
+
+    // //addItem("pone", 2.3)
+    // showCart()
+
+
+
 })
