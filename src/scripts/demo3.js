@@ -422,7 +422,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     deleteAllItems(marketfruits)
-    loadDatabase(marketfruits)
+    loadDatabase(fruitObjs)
     updateCartBubble()
     //createItem("mango")
     // deleteItem("mango")
