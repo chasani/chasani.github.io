@@ -317,27 +317,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-    function createItem(fruit) {
-        const item = {
-            // _id: new Date().toISOString(),
-            _id: fruit,
-            vid: `/src/assets/market/${fruit}-vid.mp4`,
-            thumb_1: `/@fs/T:/treas/Documents/GIT_profile_website/chasani.github.io/src/assets/market/${fruit}-thumb-1.png?origWidth=2048&origHeight=2048&origFormat=png`,
-            thumb_2: `/@fs/T:/treas/Documents/GIT_profile_website/chasani.github.io/src/assets/market/${fruit}-thumb-2.png?origWidth=2048&origHeight=2048&origFormat=png`,
-            thumb_3: `/@fs/T:/treas/Documents/GIT_profile_website/chasani.github.io/src/assets/market/${fruit}-thumb-3.png?origWidth=2048&origHeight=2048&origFormat=png`,
-            thumb_4: `/@fs/T:/treas/Documents/GIT_profile_website/chasani.github.io/src/assets/market/${fruit}-thumb-4.png?origWidth=2048&origHeight=2048&origFormat=png`,
-            title: fruit.replace('-', ' '),
-            description: document.querySelector(`#${fruit}`).querySelector('.description').innerHTML,
-            price: parseInt(document.querySelector(`#${fruit}`).getAttribute('data-price')),
-            amount: 0,
-            in_cart: false
-        };
-        db.put(item, function callback(err, result) {
-            if (!err) {
-                console.log('Successfully posted a todo!');
-            }
-        });
-    }
+
+    // function createItem(fruit) {
+    //     const item = {
+    //         // _id: new Date().toISOString(),
+    //         _id: fruit,
+    //         vid: `/src/assets/market/${fruit}-vid.mp4`,
+    //         thumb_1: `/@fs/T:/treas/Documents/GIT_profile_website/chasani.github.io/src/assets/market/${fruit}-thumb-1.png?origWidth=2048&origHeight=2048&origFormat=png`,
+    //         thumb_2: `/@fs/T:/treas/Documents/GIT_profile_website/chasani.github.io/src/assets/market/${fruit}-thumb-2.png?origWidth=2048&origHeight=2048&origFormat=png`,
+    //         thumb_3: `/@fs/T:/treas/Documents/GIT_profile_website/chasani.github.io/src/assets/market/${fruit}-thumb-3.png?origWidth=2048&origHeight=2048&origFormat=png`,
+    //         thumb_4: `/@fs/T:/treas/Documents/GIT_profile_website/chasani.github.io/src/assets/market/${fruit}-thumb-4.png?origWidth=2048&origHeight=2048&origFormat=png`,
+    //         title: fruit.replace('-', ' '),
+    //         description: document.querySelector(`#${fruit}`).querySelector('.description').innerHTML,
+    //         price: parseInt(document.querySelector(`#${fruit}`).getAttribute('data-price')),
+    //         amount: 0,
+    //         in_cart: false
+    //     };
+    //     db.put(item, function callback(err, result) {
+    //         if (!err) {
+    //             console.log('Successfully posted a todo!');
+    //         }
+    //     });
+    // }
+
 
     function deleteItem(itemId) {
         db.get(itemId).then(function (doc) {
