@@ -276,16 +276,43 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const sugarApple = {
         _id: "sugar-apple",
-        vid: `/_astro/water-apple-vid.BC6es6lx.mp4`,
-        thumb_1: `/_astro/water-apple-thumb-1.CA4cvCBy.png`,
-        thumb_2: `/_astro/water-apple-thumb-2.1XxOlKe8.png`,
-        thumb_3: `/_astro/water-apple-thumb-3.Cs92nNxL.png`,
-        thumb_4: `/_astro/water-apple-thumb-4.Y-Eld_Fm.png`,
+        vid: `/_astro/sugar-apple-vid.hh_MSQkK.mp4`,
+        thumb_1: `/_astro/sugar-apple-thumb-1.ILnx0R7r.png`,
+        thumb_2: `/_astro/sugar-apple-thumb-2.BGhHjOU1.png`,
+        thumb_3: `/_astro/sugar-apple-thumb-3.Cpc7jcrY.png`,
+        thumb_4: `/_astro/sugar-apple-thumb-4.GT04R7Ld.png`,
         title: "sugar-apple",
         description: document.querySelector(`#sugar-apple`).querySelector('.description').innerHTML,
         price: parseInt(document.querySelector(`#sugar-apple`).getAttribute('data-price')),
         amount: 0,
         in_cart: false
+    }
+
+    let fruitObjs = []
+    fruitObjs.push(banana, mango, waterApple, sugarApple)
+
+
+
+    function createItem(fruit) {
+        const item = {
+            // _id: new Date().toISOString(),
+            _id: fruit._id,
+            vid: fruit.vid,
+            thumb_1: fruit.thumb_1,
+            thumb_2: fruit.thumb_1,
+            thumb_3: fruit.thumb_1,
+            thumb_4: fruit.thumb_1,
+            title: fruit.title,
+            description: fruit.description,
+            price: fruit.price,
+            amount: 0,
+            in_cart: false
+        };
+        db.put(item, function callback(err, result) {
+            if (!err) {
+                console.log('Successfully posted a todo!');
+            }
+        });
     }
 
 
@@ -294,11 +321,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const item = {
             // _id: new Date().toISOString(),
             _id: fruit,
-            vid: `/_astro/banana-vid.2P2xiE24.mp4`,
-            thumb_1: `/_astro/banana-thumb-1.BPrnxREf.png`,
-            thumb_2: `/_astro/banana-thumb-2.D0gXrxjf.png`,
-            thumb_3: `/_astro/banana-thumb-3.CZTPaZDs.png`,
-            thumb_4: `/_astro/banana-thumb-4.BHhp8q39.png`,
+            vid: `/src/assets/market/${fruit}-vid.mp4`,
+            thumb_1: `/@fs/T:/treas/Documents/GIT_profile_website/chasani.github.io/src/assets/market/${fruit}-thumb-1.png?origWidth=2048&origHeight=2048&origFormat=png`,
+            thumb_2: `/@fs/T:/treas/Documents/GIT_profile_website/chasani.github.io/src/assets/market/${fruit}-thumb-2.png?origWidth=2048&origHeight=2048&origFormat=png`,
+            thumb_3: `/@fs/T:/treas/Documents/GIT_profile_website/chasani.github.io/src/assets/market/${fruit}-thumb-3.png?origWidth=2048&origHeight=2048&origFormat=png`,
+            thumb_4: `/@fs/T:/treas/Documents/GIT_profile_website/chasani.github.io/src/assets/market/${fruit}-thumb-4.png?origWidth=2048&origHeight=2048&origFormat=png`,
             title: fruit.replace('-', ' '),
             description: document.querySelector(`#${fruit}`).querySelector('.description').innerHTML,
             price: parseInt(document.querySelector(`#${fruit}`).getAttribute('data-price')),
