@@ -232,6 +232,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const marketfruits = ["banana", "mango", "water-apple", "sugar-apple"]
 
+    /* For git hub -- for some reason astro on github cannont locate the media  */
     const banana = {
         _id: "banana",
         vid: `/_astro/banana-vid.2P2xiE24.mp4`,
@@ -299,9 +300,9 @@ document.addEventListener('DOMContentLoaded', () => {
             _id: fruit._id,
             vid: fruit.vid,
             thumb_1: fruit.thumb_1,
-            thumb_2: fruit.thumb_1,
-            thumb_3: fruit.thumb_1,
-            thumb_4: fruit.thumb_1,
+            thumb_2: fruit.thumb_2,
+            thumb_3: fruit.thumb_3,
+            thumb_4: fruit.thumb_4,
             title: fruit.title,
             description: fruit.description,
             price: fruit.price,
@@ -315,7 +316,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-
+    /* for git hub end */
 
 
     // function createItem(fruit) {
