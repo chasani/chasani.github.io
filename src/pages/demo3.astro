@@ -6,6 +6,7 @@ import bananaThumb1 from "../assets/market/banana-thumb-1.png";
 import bananaThumb2 from "../assets/market/banana-thumb-2.png";
 import bananaThumb3 from "../assets/market/banana-thumb-3.png";
 import bananaThumb4 from "../assets/market/banana-thumb-4.png";
+import bananaVid from "../assets/market/banana-vid.mp4";
 import mango from "../assets/market/mango.png";
 import waterApple from "../assets/market/water-apple.png";
 import sugarApple from "../assets/market/sugar-apple.png";
@@ -83,7 +84,14 @@ import waterAppleVid from "../assets/market/water-apple-vid.mp4";
             </div>
         </header>
 
-        <img src={bananaThumb1.src} alt="" />
+        <div style="display:flex; max-width: 100%; z-index: 1000;">
+            <img src={bananaThumb1.src} alt="" width="200px" height="100px" />
+            <img src={bananaThumb2.src} alt="" width="200px" height="100px" />
+            <img src={bananaThumb3.src} alt="" width="200px" height="100px" />
+            <img src={bananaThumb4.src} alt="" width="200px" height="100px" />
+            <video src={bananaVid} width="200px" height="200px" muted autoplay
+            ></video>
+        </div>
 
         <section class="hero">
             <div class="shopping__cart">
