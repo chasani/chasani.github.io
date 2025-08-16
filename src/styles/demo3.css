@@ -500,7 +500,7 @@ p {
     border-radius: inherit;
 }
 
-.order__card ul {
+.order__card .show__items {
     display: flex;
     margin-top: var(--padding-150);
     justify-content: space-between;

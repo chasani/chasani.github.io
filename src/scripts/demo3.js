@@ -137,9 +137,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     thumbnails.forEach(thumb => {
         thumb.addEventListener('click', () => {
-            showWindowImage.style.display = 'block'
-            showWindowVid.style.display = "none"
-            showWindowImage.setAttribute('src', thumb.getAttribute('src'))
+            thumb.parentElement.previousElementSibling.querySelector('img').style.display = 'block'
+            thumb.parentElement.previousElementSibling.querySelector('video').style.display = "none"
+            thumb.parentElement.previousElementSibling.querySelector('img').setAttribute('src', thumb.getAttribute('src'))
 
         })
     })
