@@ -247,12 +247,26 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const mango = {
-        _id: "banana",
-        vid: `/_astro/banana-vid.2P2xiE24.mp4`,
-        thumb_1: `/_astro/banana-thumb-1.BPrnxREf.png`,
-        thumb_2: `/_astro/banana-thumb-2.D0gXrxjf.png`,
-        thumb_3: `/_astro/banana-thumb-3.CZTPaZDs.png`,
-        thumb_4: `/_astro/banana-thumb-4.BHhp8q39.png`,
+        _id: "mango",
+        vid: `/_astro/mango-vid.BQJwRSs6.mp4`,
+        thumb_1: `/_astro/mango-thumb-1.C0Uo4Ze2.png`,
+        thumb_2: `/_astro/mango-thumb-2.BRKMXBG-.png`,
+        thumb_3: `/_astro/mango-thumb-3.C7jmhhSq.png`,
+        thumb_4: `/_astro/mango-thumb-4.BX9tqXaX.png`,
+        // title: fruit.replace('-', ' '),
+        // description: document.querySelector(`#${fruit}`).querySelector('.description').innerHTML,
+        // price: parseInt(document.querySelector(`#${fruit}`).getAttribute('data-price')),
+        // amount: 0,
+        in_cart: false
+    }
+
+    const waterApple = {
+        _id: "water-apple",
+        vid: `/_astro/mango-vid.BQJwRSs6.mp4`,
+        thumb_1: `/_astro/mango-thumb-1.C0Uo4Ze2.png`,
+        thumb_2: `/_astro/mango-thumb-2.BRKMXBG-.png`,
+        thumb_3: `/_astro/mango-thumb-3.C7jmhhSq.png`,
+        thumb_4: `/_astro/mango-thumb-4.BX9tqXaX.png`,
         // title: fruit.replace('-', ' '),
         // description: document.querySelector(`#${fruit}`).querySelector('.description').innerHTML,
         // price: parseInt(document.querySelector(`#${fruit}`).getAttribute('data-price')),
