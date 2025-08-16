@@ -239,10 +239,10 @@ document.addEventListener('DOMContentLoaded', () => {
         thumb_2: `/_astro/banana-thumb-2.D0gXrxjf.png`,
         thumb_3: `/_astro/banana-thumb-3.CZTPaZDs.png`,
         thumb_4: `/_astro/banana-thumb-4.BHhp8q39.png`,
-        // title: fruit.replace('-', ' '),
-        // description: document.querySelector(`#${fruit}`).querySelector('.description').innerHTML,
-        // price: parseInt(document.querySelector(`#${fruit}`).getAttribute('data-price')),
-        // amount: 0,
+        title: "Bananas",
+        description: document.querySelector(`#banana`).querySelector('.description').innerHTML,
+        price: parseInt(document.querySelector(`#banana`).getAttribute('data-price')),
+        amount: 0,
         in_cart: false
     }
 
@@ -253,24 +253,38 @@ document.addEventListener('DOMContentLoaded', () => {
         thumb_2: `/_astro/mango-thumb-2.BRKMXBG-.png`,
         thumb_3: `/_astro/mango-thumb-3.C7jmhhSq.png`,
         thumb_4: `/_astro/mango-thumb-4.BX9tqXaX.png`,
-        // title: fruit.replace('-', ' '),
-        // description: document.querySelector(`#${fruit}`).querySelector('.description').innerHTML,
-        // price: parseInt(document.querySelector(`#${fruit}`).getAttribute('data-price')),
-        // amount: 0,
+        title: "mango",
+        description: document.querySelector(`#mango`).querySelector('.description').innerHTML,
+        price: parseInt(document.querySelector(`#mango`).getAttribute('data-price')),
+        amount: 0,
         in_cart: false
     }
 
     const waterApple = {
         _id: "water-apple",
-        vid: `/_astro/mango-vid.BQJwRSs6.mp4`,
-        thumb_1: `/_astro/mango-thumb-1.C0Uo4Ze2.png`,
-        thumb_2: `/_astro/mango-thumb-2.BRKMXBG-.png`,
-        thumb_3: `/_astro/mango-thumb-3.C7jmhhSq.png`,
-        thumb_4: `/_astro/mango-thumb-4.BX9tqXaX.png`,
-        // title: fruit.replace('-', ' '),
-        // description: document.querySelector(`#${fruit}`).querySelector('.description').innerHTML,
-        // price: parseInt(document.querySelector(`#${fruit}`).getAttribute('data-price')),
-        // amount: 0,
+        vid: `/_astro/water-apple-vid.BC6es6lx.mp4`,
+        thumb_1: `/_astro/water-apple-thumb-1.CA4cvCBy.png`,
+        thumb_2: `/_astro/water-apple-thumb-2.1XxOlKe8.png`,
+        thumb_3: `/_astro/water-apple-thumb-3.Cs92nNxL.png`,
+        thumb_4: `/_astro/water-apple-thumb-4.Y-Eld_Fm.png`,
+        title: "water-apple",
+        description: document.querySelector(`#water-apple`).querySelector('.description').innerHTML,
+        price: parseInt(document.querySelector(`#water-apple`).getAttribute('data-price')),
+        amount: 0,
+        in_cart: false
+    }
+
+    const sugarApple = {
+        _id: "sugar-apple",
+        vid: `/_astro/water-apple-vid.BC6es6lx.mp4`,
+        thumb_1: `/_astro/water-apple-thumb-1.CA4cvCBy.png`,
+        thumb_2: `/_astro/water-apple-thumb-2.1XxOlKe8.png`,
+        thumb_3: `/_astro/water-apple-thumb-3.Cs92nNxL.png`,
+        thumb_4: `/_astro/water-apple-thumb-4.Y-Eld_Fm.png`,
+        title: "sugar-apple",
+        description: document.querySelector(`#sugar-apple`).querySelector('.description').innerHTML,
+        price: parseInt(document.querySelector(`#sugar-apple`).getAttribute('data-price')),
+        amount: 0,
         in_cart: false
     }
 
