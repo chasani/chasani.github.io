@@ -2,18 +2,32 @@
 import "../styles/demo3.css";
 import marketLogo from "../assets/market/logo-2-sm.png";
 import banana from "../assets/market/banana.png";
-import bananaThumb1 from "../assets/market/sugar-apple-thumb-1.png";
-import bananaThumb2 from "../assets/market/sugar-apple-thumb-2.png";
-import bananaThumb3 from "../assets/market/sugar-apple-thumb-3.png";
-import bananaThumb4 from "../assets/market/sugar-apple-thumb-4.png";
-import bananaVid from "../assets/market/sugar-apple-vid.mp4";
-import mango from "../assets/market/mango.png";
-import waterApple from "../assets/market/water-apple.png";
-import sugarApple from "../assets/market/sugar-apple.png";
-import sugarAppleVid from "../assets/market/sugar-apple1.mp4";
+import bananaThumb1 from "../assets/market/banana-thumb-1.png";
+import bananaThumb2 from "../assets/market/banana-thumb-2.png";
+import bananaThumb3 from "../assets/market/banana-thumb-3.png";
+import bananaThumb4 from "../assets/market/banana-thumb-4.png";
+import bananaVid from "../assets/market/banana-vid.mp4";
 
+import mango from "../assets/market/mango.png";
+import mangoThumb1 from "../assets/market/mango-thumb-1.png";
+import mangoThumb2 from "../assets/market/mango-thumb-2.png";
+import mangoThumb3 from "../assets/market/mango-thumb-3.png";
+import mangoThumb4 from "../assets/market/mango-thumb-4.png";
 import mangoVid from "../assets/market/mango-vid.mp4";
+
+import waterApple from "../assets/market/water-apple.png";
+import waterAppleThumb1 from "../assets/market/water-apple-thumb-1.png";
+import waterAppleThumb2 from "../assets/market/water-apple-thumb-2.png";
+import waterAppleThumb3 from "../assets/market/water-apple-thumb-3.png";
+import waterAppleThumb4 from "../assets/market/water-apple-thumb-4.png";
 import waterAppleVid from "../assets/market/water-apple-vid.mp4";
+
+import sugarApple from "../assets/market/sugar-apple.png";
+import sugarAppleThumb1 from "../assets/market/sugar-apple-thumb-1.png";
+import sugarAppleThumb2 from "../assets/market/sugar-apple-thumb-2.png";
+import sugarAppleThumb3 from "../assets/market/sugar-apple-thumb-3.png";
+import sugarAppleThumb4 from "../assets/market/sugar-apple-thumb-4.png";
+import sugarAppleVid from "../assets/market/sugar-apple-vid.mp4";
 ---
 
 <!doctype html>
@@ -83,15 +97,6 @@ import waterAppleVid from "../assets/market/water-apple-vid.mp4";
                 </div>
             </div>
         </header>
-
-        <div style="display:flex; max-width: 100%; z-index: 1000;">
-            <img src={bananaThumb1.src} alt="" width="200px" height="100px" />
-            <img src={bananaThumb2.src} alt="" width="200px" height="100px" />
-            <img src={bananaThumb3.src} alt="" width="200px" height="100px" />
-            <!-- <img src={bananaThumb4.src} alt="" width="200px" height="100px" /> -->
-            <video src={bananaVid} width="200px" height="200px" muted autoplay
-            ></video>
-        </div>
 
         <section class="hero">
             <div class="shopping__cart">
@@ -224,15 +229,16 @@ import waterAppleVid from "../assets/market/water-apple-vid.mp4";
                 <img src={banana.src} alt="" class="hero__img" />
             </div>
 
-            <!-- Order Card -->
-            <div class="order__card" id="order-card">
+            <!-- Order Card 1 -->
+            <div class="order__card" id="order-banana" data-fruit="banana">
                 <div class="close__card">
                     <i class="ri-close-line"></i>
                 </div>
                 <div class="content">
                     <div class="product">
                         <div class="show__window">
-                            <video src="" muted autoplay width="400px"></video>
+                            <video src={bananaVid} muted autoplay width="400px"
+                            ></video>
                             <img src="" alt="" />
                         </div>
                         <div class="show__items">
@@ -241,7 +247,7 @@ import waterAppleVid from "../assets/market/water-apple-vid.mp4";
                                     <img
                                         width="75px"
                                         height="75px"
-                                        src=""
+                                        src={bananaThumb1.src}
                                         alt="image 1"
                                         id="image-1"
                                     />
@@ -250,7 +256,7 @@ import waterAppleVid from "../assets/market/water-apple-vid.mp4";
                                     <img
                                         width="75px"
                                         height="75px"
-                                        src=""
+                                        src={bananaThumb2.src}
                                         alt="image 2"
                                         id="image-2"
                                     />
@@ -259,7 +265,7 @@ import waterAppleVid from "../assets/market/water-apple-vid.mp4";
                                     <img
                                         width="75px"
                                         height="75px"
-                                        src=""
+                                        src={bananaThumb3.src}
                                         alt="image 3"
                                         id="image-3"
                                     />
@@ -268,7 +274,7 @@ import waterAppleVid from "../assets/market/water-apple-vid.mp4";
                                     <img
                                         width="75px"
                                         height="75px"
-                                        src=""
+                                        src={bananaThumb4.src}
                                         alt="image 4"
                                         id="image-4"
                                     />
@@ -293,7 +299,256 @@ import waterAppleVid from "../assets/market/water-apple-vid.mp4";
                             </span>
                             <button
                                 type="submit"
-                                class="button"
+                                class="button cart__btn"
+                                id="cart-btn"
+                                data-type="cart">Add to cart</button
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- order card 2 -->
+            <div class="order__card" id="order-mango" data-fruit="mango">
+                <div class="close__card">
+                    <i class="ri-close-line"></i>
+                </div>
+                <div class="content">
+                    <div class="product">
+                        <div class="show__window">
+                            <video src={mangoVid} muted autoplay width="400px"
+                            ></video>
+                            <img src="" alt="" />
+                        </div>
+                        <div class="show__items">
+                            <ul>
+                                <li>
+                                    <img
+                                        width="75px"
+                                        height="75px"
+                                        src={mangoThumb1.src}
+                                        alt="image 1"
+                                        id="image-1"
+                                    />
+                                </li>
+                                <li>
+                                    <img
+                                        width="75px"
+                                        height="75px"
+                                        src={mangoThumb2.src}
+                                        alt="image 2"
+                                        id="image-2"
+                                    />
+                                </li>
+                                <li>
+                                    <img
+                                        width="75px"
+                                        height="75px"
+                                        src={mangoThumb3.src}
+                                        alt="image 3"
+                                        id="image-3"
+                                    />
+                                </li>
+                                <li>
+                                    <img
+                                        width="75px"
+                                        height="75px"
+                                        src={mangoThumb4.src}
+                                        alt="image 4"
+                                        id="image-4"
+                                    />
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="product__details">
+                        <h5 id="owner">Zane's Garden</h5>
+                        <h1 id="title"></h1>
+                        <p id="desc"></p>
+                        <pre id="price"></pre>
+                        <div>
+                            <span class="pricing__group" id="pricing-group">
+                                <label for="number" data-sign="minus">-</label>
+                                <input
+                                    type="number"
+                                    id="purchase-number"
+                                    value="0"
+                                />
+                                <label for="number" data-sign="plus">+</label>
+                            </span>
+                            <button
+                                type="submit"
+                                class="button cart__btn"
+                                id="cart-btn"
+                                data-type="cart">Add to cart</button
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- order card 3 -->
+            <div
+                class="order__card"
+                id="order-water-apple"
+                data-fruit="water-apple"
+            >
+                <div class="close__card">
+                    <i class="ri-close-line"></i>
+                </div>
+                <div class="content">
+                    <div class="product">
+                        <div class="show__window">
+                            <video
+                                src={waterAppleVid}
+                                muted
+                                autoplay
+                                width="400px"></video>
+                            <img src="" alt="" />
+                        </div>
+                        <div class="show__items">
+                            <ul>
+                                <li>
+                                    <img
+                                        width="75px"
+                                        height="75px"
+                                        src={waterAppleThumb1.src}
+                                        alt="image 1"
+                                        id="image-1"
+                                    />
+                                </li>
+                                <li>
+                                    <img
+                                        width="75px"
+                                        height="75px"
+                                        src={waterAppleThumb2.src}
+                                        alt="image 2"
+                                        id="image-2"
+                                    />
+                                </li>
+                                <li>
+                                    <img
+                                        width="75px"
+                                        height="75px"
+                                        src={waterAppleThumb3.src}
+                                        alt="image 3"
+                                        id="image-3"
+                                    />
+                                </li>
+                                <li>
+                                    <img
+                                        width="75px"
+                                        height="75px"
+                                        src={waterAppleThumb4.src}
+                                        alt="image 4"
+                                        id="image-4"
+                                    />
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="product__details">
+                        <h5 id="owner">Zane's Garden</h5>
+                        <h1 id="title"></h1>
+                        <p id="desc"></p>
+                        <pre id="price"></pre>
+                        <div>
+                            <span class="pricing__group" id="pricing-group">
+                                <label for="number" data-sign="minus">-</label>
+                                <input
+                                    type="number"
+                                    id="purchase-number"
+                                    value="0"
+                                />
+                                <label for="number" data-sign="plus">+</label>
+                            </span>
+                            <button
+                                type="submit"
+                                class="button cart__btn"
+                                id="cart-btn"
+                                data-type="cart">Add to cart</button
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- order card 4 -->
+            <div
+                class="order__card"
+                id="order-sugar-apple"
+                data-fruit="sugar-apple"
+            >
+                <div class="close__card">
+                    <i class="ri-close-line"></i>
+                </div>
+                <div class="content">
+                    <div class="product">
+                        <div class="show__window">
+                            <video
+                                src={sugarAppleVid}
+                                muted
+                                autoplay
+                                width="400px"></video>
+                            <img src="" alt="" />
+                        </div>
+                        <div class="show__items">
+                            <ul>
+                                <li>
+                                    <img
+                                        width="75px"
+                                        height="75px"
+                                        src={sugarAppleThumb1.src}
+                                        alt="image 1"
+                                        id="image-1"
+                                    />
+                                </li>
+                                <li>
+                                    <img
+                                        width="75px"
+                                        height="75px"
+                                        src={sugarAppleThumb2.src}
+                                        alt="image 2"
+                                        id="image-2"
+                                    />
+                                </li>
+                                <li>
+                                    <img
+                                        width="75px"
+                                        height="75px"
+                                        src={sugarAppleThumb3.src}
+                                        alt="image 3"
+                                        id="image-3"
+                                    />
+                                </li>
+                                <li>
+                                    <img
+                                        width="75px"
+                                        height="75px"
+                                        src={sugarAppleThumb4.src}
+                                        alt="image 4"
+                                        id="image-4"
+                                    />
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="product__details">
+                        <h5 id="owner">Zane's Garden</h5>
+                        <h1 id="title"></h1>
+                        <p id="desc"></p>
+                        <pre id="price"></pre>
+                        <div>
+                            <span class="pricing__group" id="pricing-group">
+                                <label for="number" data-sign="minus">-</label>
+                                <input
+                                    type="number"
+                                    id="purchase-number"
+                                    value="0"
+                                />
+                                <label for="number" data-sign="plus">+</label>
+                            </span>
+                            <button
+                                type="submit"
+                                class="button cart__btn"
                                 id="cart-btn"
                                 data-type="cart">Add to cart</button
                             >

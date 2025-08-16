@@ -26,6 +26,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const navMenu = document.querySelector('#nav-menu')
         navMenu.classList.remove('show-menu')
         closeOrderCard()
+        shopping__cart.classList.remove('slide-in')
+
     }
 
     navLink.forEach((list) => {
@@ -69,16 +71,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // set items on order card
 
-    const orderCard = document.querySelector('#order-card')
+    // const orderCard = document.querySelector('#order-card')
 
 
     // Close card
     function closeOrderCard() {
+        const orderFruit = document.querySelector('.active-link').getAttribute('data-fruit')
+
+        const orderCard = document.querySelector(`#order-${orderFruit}`)
+
+
         orderCard.classList.remove('order__visible')
 
     }
 
-    document.querySelector('.close__card i').addEventListener('click', closeOrderCard)
+    document.querySelectorAll('.close__card i').forEach(icon => {
+        icon.addEventListener('click', closeOrderCard)
+    })
 
     // open card and fill
     const getBtn = document.querySelector('button')
@@ -88,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
     getBtn.addEventListener('click', () => {
         shopping__cart.classList.remove('slide-in')
 
-        orderCard.classList.add('order__visible')
+        // orderCard.classList.add('order__visible')
 
         // reset card show window
         document.querySelector('.show__window img').setAttribute('src', '')
@@ -98,12 +107,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
         db.get(orderFruit).then(doc => {
 
-            const orderCard = document.querySelector('.order__card')
-            orderCard.querySelector('video').setAttribute('src', doc.vid)
-            orderCard.querySelector('#image-1').setAttribute('src', doc['thumb_1'])
-            orderCard.querySelector('#image-2').setAttribute('src', doc.thumb_2)
-            orderCard.querySelector('#image-3').setAttribute('src', doc['thumb_3'])
-            orderCard.querySelector('#image-4').setAttribute('src', doc.thumb_4)
+            const orderCard = document.querySelector(`#order-${orderFruit}`)
+            orderCard.classList.add('order__visible')
+
+            // orderCard.querySelector('video').setAttribute('src', doc.vid)
+            // orderCard.querySelector('#image-1').setAttribute('src', doc['thumb_1'])
+            // orderCard.querySelector('#image-2').setAttribute('src', doc.thumb_2)
+            // orderCard.querySelector('#image-3').setAttribute('src', doc['thumb_3'])
+            // orderCard.querySelector('#image-4').setAttribute('src', doc.thumb_4)
             orderCard.querySelector('#title').innerHTML = doc.title
             orderCard.querySelector('#desc').innerHTML = doc['description']
             orderCard.querySelector('#price').innerHTML = "$" + doc.price + "  l/b"
@@ -136,14 +147,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Increase/decrease purchase amount
     const signs = document.querySelectorAll('#pricing-group label')
-    const purchaseNumber = document.querySelector('#purchase-number')
+    // const purchaseNumber = document.querySelector('#purchase-number')
 
     signs.forEach(sign => {
         sign.addEventListener('click', () => {
+
             if (sign.getAttribute('data-sign') === 'minus') {
+                const purchaseNumber = sign.nextElementSibling
+
                 purchaseNumber.value = parseInt(purchaseNumber.value) - 1
 
             } else if (sign.getAttribute('data-sign') === 'plus') {
+                const purchaseNumber = sign.previousElementSibling
+
                 purchaseNumber.value = parseInt(purchaseNumber.value) + 1
 
             }
@@ -153,31 +169,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // Add to cart button
-    const addToCartBtn = document.querySelector('#cart-btn')
+    const addToCartBtn = document.querySelectorAll('.cart__btn')
 
-    addToCartBtn.addEventListener('click', () => {
+    addToCartBtn.forEach(cBtn => {
+        cBtn.addEventListener('click', () => {
 
-        const orderedFruit = document.querySelector('.active-link').getAttribute('data-fruit')
+            const orderedFruit = document.querySelector('.active-link').getAttribute('data-fruit')
+            const purchaseNumber = cBtn.parentElement.querySelector('#purchase-number')
 
 
-        db.get(orderedFruit).then((doc) => {
-            doc.amount = purchaseNumber.value
-            doc.in_cart = true
+            db.get(orderedFruit).then((doc) => {
+                doc.amount = purchaseNumber.value
+                doc.in_cart = true
 
-            return db.put(doc)
+                return db.put(doc)
 
-        }).then(() => {
-            const cartFruit = document.querySelector(`#${orderedFruit}-incart`)
-            // console.info(cartFruit)
-            cartFruit.classList.add('cart-visible')
-            cartFruit.querySelector('#value').innerHTML = purchaseNumber.value
-            updateCartBubble()
+            }).then(() => {
+                const cartFruit = document.querySelector(`#${orderedFruit}-incart`)
+                // console.info(cartFruit)
+                cartFruit.classList.add('cart-visible')
+                cartFruit.querySelector('#value').innerHTML = purchaseNumber.value
+                updateCartBubble()
+
+            })
+
+            closeOrderCard()
 
         })
 
-        closeOrderCard()
-
     })
+
+
 
     // Remove fruit from cart
     const removeFromCartBtns = document.querySelectorAll('.cart__options button')
@@ -233,79 +255,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const marketfruits = ["banana", "mango", "water-apple", "sugar-apple"]
 
     /* For git hub -- for some reason astro on github cannont locate the media  */
-    const banana = {
-        _id: "banana",
-        vid: `/_astro/banana-vid.2P2xiE24.mp4`,
-        thumb_1: `/_astro/banana-thumb-1.BPrnxREf.png`,
-        thumb_2: `/_astro/banana-thumb-2.D0gXrxjf.png`,
-        thumb_3: `/_astro/banana-thumb-3.CZTPaZDs.png`,
-        thumb_4: `/_astro/banana-thumb-4.BHhp8q39.png`,
-        title: "Bananas",
-        description: document.querySelector(`#banana`).querySelector('.description').innerHTML,
-        price: parseInt(document.querySelector(`#banana`).getAttribute('data-price')),
-        amount: 0,
-        in_cart: false
-    }
 
-    const mango = {
-        _id: "mango",
-        vid: `/_astro/mango-vid.BQJwRSs6.mp4`,
-        thumb_1: `/_astro/mango-thumb-1.C0Uo4Ze2.png`,
-        thumb_2: `/_astro/mango-thumb-2.BRKMXBG-.png`,
-        thumb_3: `/_astro/mango-thumb-3.C7jmhhSq.png`,
-        thumb_4: `/_astro/mango-thumb-4.BX9tqXaX.png`,
-        title: "mango",
-        description: document.querySelector(`#mango`).querySelector('.description').innerHTML,
-        price: parseInt(document.querySelector(`#mango`).getAttribute('data-price')),
-        amount: 0,
-        in_cart: false
-    }
 
-    const waterApple = {
-        _id: "water-apple",
-        vid: `/_astro/water-apple-vid.BC6es6lx.mp4`,
-        thumb_1: `/_astro/water-apple-thumb-1.CA4cvCBy.png`,
-        thumb_2: `/_astro/water-apple-thumb-2.1XxOlKe8.png`,
-        thumb_3: `/_astro/water-apple-thumb-3.Cs92nNxL.png`,
-        thumb_4: `/_astro/water-apple-thumb-4.Y-Eld_Fm.png`,
-        title: "water-apple",
-        description: document.querySelector(`#water-apple`).querySelector('.description').innerHTML,
-        price: parseInt(document.querySelector(`#water-apple`).getAttribute('data-price')),
-        amount: 0,
-        in_cart: false
-    }
 
-    const sugarApple = {
-        _id: "sugar-apple",
-        vid: `/_astro/sugar-apple-vid.hh_MSQkK.mp4`,
-        thumb_1: `/_astro/sugar-apple-thumb-1.ILnx0R7r.png`,
-        thumb_2: `/_astro/sugar-apple-thumb-2.BGhHjOU1.png`,
-        thumb_3: `/_astro/sugar-apple-thumb-3.Cpc7jcrY.png`,
-        thumb_4: `/_astro/sugar-apple-thumb-4.GT04R7Ld.png`,
-        title: "sugar-apple",
-        description: document.querySelector(`#sugar-apple`).querySelector('.description').innerHTML,
-        price: parseInt(document.querySelector(`#sugar-apple`).getAttribute('data-price')),
-        amount: 0,
-        in_cart: false
-    }
 
-    let fruitObjs = []
-    fruitObjs.push(banana, mango, waterApple, sugarApple)
 
+
+    /* for git hub end */
 
 
     function createItem(fruit) {
         const item = {
             // _id: new Date().toISOString(),
-            _id: fruit._id,
-            vid: fruit.vid,
-            thumb_1: fruit.thumb_1,
-            thumb_2: fruit.thumb_2,
-            thumb_3: fruit.thumb_3,
-            thumb_4: fruit.thumb_4,
-            title: fruit.title,
-            description: fruit.description,
-            price: fruit.price,
+            _id: fruit,
+            vid: `/src/assets/market/${fruit}-vid.mp4`,
+            thumb_1: `/@fs/T:/treas/Documents/GIT_profile_website/chasani.github.io/src/assets/market/${fruit}-thumb-1.png?origWidth=2048&origHeight=2048&origFormat=png`,
+            thumb_2: `/@fs/T:/treas/Documents/GIT_profile_website/chasani.github.io/src/assets/market/${fruit}-thumb-2.png?origWidth=2048&origHeight=2048&origFormat=png`,
+            thumb_3: `/@fs/T:/treas/Documents/GIT_profile_website/chasani.github.io/src/assets/market/${fruit}-thumb-3.png?origWidth=2048&origHeight=2048&origFormat=png`,
+            thumb_4: `/@fs/T:/treas/Documents/GIT_profile_website/chasani.github.io/src/assets/market/${fruit}-thumb-4.png?origWidth=2048&origHeight=2048&origFormat=png`,
+            title: fruit.replace('-', ' '),
+            description: document.querySelector(`#${fruit}`).querySelector('.description').innerHTML,
+            price: parseInt(document.querySelector(`#${fruit}`).getAttribute('data-price')),
             amount: 0,
             in_cart: false
         };
@@ -315,31 +285,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-
-    /* for git hub end */
-
-
-    // function createItem(fruit) {
-    //     const item = {
-    //         // _id: new Date().toISOString(),
-    //         _id: fruit,
-    //         vid: `/src/assets/market/${fruit}-vid.mp4`,
-    //         thumb_1: `/@fs/T:/treas/Documents/GIT_profile_website/chasani.github.io/src/assets/market/${fruit}-thumb-1.png?origWidth=2048&origHeight=2048&origFormat=png`,
-    //         thumb_2: `/@fs/T:/treas/Documents/GIT_profile_website/chasani.github.io/src/assets/market/${fruit}-thumb-2.png?origWidth=2048&origHeight=2048&origFormat=png`,
-    //         thumb_3: `/@fs/T:/treas/Documents/GIT_profile_website/chasani.github.io/src/assets/market/${fruit}-thumb-3.png?origWidth=2048&origHeight=2048&origFormat=png`,
-    //         thumb_4: `/@fs/T:/treas/Documents/GIT_profile_website/chasani.github.io/src/assets/market/${fruit}-thumb-4.png?origWidth=2048&origHeight=2048&origFormat=png`,
-    //         title: fruit.replace('-', ' '),
-    //         description: document.querySelector(`#${fruit}`).querySelector('.description').innerHTML,
-    //         price: parseInt(document.querySelector(`#${fruit}`).getAttribute('data-price')),
-    //         amount: 0,
-    //         in_cart: false
-    //     };
-    //     db.put(item, function callback(err, result) {
-    //         if (!err) {
-    //             console.log('Successfully posted a todo!');
-    //         }
-    //     });
-    // }
 
 
     function deleteItem(itemId) {
@@ -425,7 +370,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     deleteAllItems(marketfruits)
-    loadDatabase(fruitObjs)
+    loadDatabase(marketfruits)
     updateCartBubble()
     //createItem("mango")
     // deleteItem("mango")
