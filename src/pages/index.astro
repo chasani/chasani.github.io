@@ -5,6 +5,7 @@ import Card from "../components/Card_inset_p.astro";
 import tutorBg from "../assets/manage_landing_page/tutor-site-bg.png";
 import marketBg from "../assets/market/market-site-bg.png";
 import bakeryBg from "../assets/bakery/bakery-site-bg.png";
+import certBg from "../assets/cert/cert-site-bg.png";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -442,6 +443,77 @@ import bakeryBg from "../assets/bakery/bakery-site-bg.png";
 						<div class="flex gap-4">
 							<a
 								href="/demo1"
+								target="_blank"
+								class="px-4 py-2 bg-primary text-white rounded-lg transform
+                                    hover:bg-blue-600 transition-colors dark:bg-dark-background-secondary dark:border
+                                border-gray-200 dark:border-gray-700 hover:border-gray-900 dark:hover:border-white
+                                 text-center"
+							>
+								View
+							</a>
+							<!-- <a
+								href=""
+								class="px-4 py-2 flex items-center text-gray-600 dark:text-gray-400 rounded-lg transform
+                                    hover:text-primary dark:hover:text-primary transition-colors"
+							>
+								<i class="fa-brands fa-github mr-2"></i>
+								Code
+							</a> -->
+						</div>
+					</div>
+				</div>
+				<!-- Project card 4 -->
+
+				<div
+					class="p-card bg-white dark:bg-dark-background rounded-lg shadow-lg overflow-hidden
+                        hover:shodow-xl transition-all duration-300 transform hover:-translate-y-1"
+				>
+					<div class="h-48 relative">
+						<img
+							src={certBg.src}
+							alt=""
+							class="w-full h-full object-cover"
+						/>
+					</div>
+					<div class="p-6 curtain-text">
+						<h3 class="text-xl font-bold mb-4">
+							Certificate Award System
+						</h3>
+						<p class="text-gray-600 dark:text-gray-400 mb-4 h16">
+							A Certificate creation system with client
+							management.
+						</p>
+						<div class="flex flex-wrap gap-2 my-6">
+							<span
+								class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary
+                                    text-gray-600 dark:text-gray-400 rounded-full text-sm"
+							>
+								HTML5
+							</span>
+							<span
+								class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary
+                                    text-gray-600 dark:text-gray-400 rounded-full text-sm"
+							>
+								JavaScript
+							</span>
+
+							<span
+								class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary
+                                    text-gray-600 dark:text-gray-400 rounded-full text-sm"
+							>
+								Database
+							</span>
+
+							<span
+								class="px-3 py-1 bg-gray-100 dark:bg-dark-background-secondary
+                                    text-gray-600 dark:text-gray-400 rounded-full text-sm"
+							>
+								CSS3
+							</span>
+						</div>
+						<div class="flex gap-4">
+							<a
+								href="/demo4"
 								target="_blank"
 								class="px-4 py-2 bg-primary text-white rounded-lg transform
                                     hover:bg-blue-600 transition-colors dark:bg-dark-background-secondary dark:border
