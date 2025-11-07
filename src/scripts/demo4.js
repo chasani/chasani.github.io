@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const loggedinUser = localStorage.getItem('certUsername')
     const page = window.location.href
     if ((page != 'http://localhost:4321/demo4' && page != 'http://localhost:4321/demo4_reg') && !loggedinUser) {
-        window.location.href = 'http://localhost:4321/demo4';
+        window.location.href = 'demo4';
         // return
 
     }
