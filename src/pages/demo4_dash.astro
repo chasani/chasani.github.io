@@ -1,0 +1,203 @@
+---
+import "../styles/demo4.css";
+import cert1 from "../assets/cert/cert1.jpg";
+import cert2 from "../assets/cert/cert2.jpg";
+import cert3 from "../assets/cert/cert3.jpg";
+import cert4 from "../assets/cert/cert4.jpg";
+import avatar1 from "../assets/cert/avatar1.jpg";
+import avatar2 from "../assets/cert/avatar2.jpg";
+import certlogo from "../assets/cert/cert_logo.png";
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content={Astro.generator} />
+        <script src="../scripts/demo4.js"></script>
+        <!--=============== REMIXICONS ===============-->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.7.0/remixicon.css"
+        />
+
+        <!--=============== Database ===============-->
+        <script
+            src="https://cdn.jsdelivr.net/npm/pouchdb@9.0.0/dist/pouchdb.min.js"
+        ></script>
+
+        <title>demo4</title>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <div class="logo">
+                    <i class="ri-menu-line" id="menu__line"></i>
+                    <img
+                        src={certlogo.src}
+                        alt="logo"
+                        height="48px"
+                        width="48px"
+                    />
+                </div>
+                <div class="links">
+                    <ul>
+                        <li class="logout__link" id="logout-link">logout</li>
+                        <li></li>
+                    </ul>
+                    <img
+                        src={avatar1.src}
+                        alt="user pic"
+                        height="48px"
+                        width="48px"
+                    />
+                    <p id="loginUser"></p>
+                </div>
+            </nav>
+        </header>
+        <section class="side__nav" id="side-nav">
+            <ul>
+                <li>
+                    <a href="demo4_dash">
+                        <i class="ri-home-4-line"></i>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="demo4_create">
+                        <i class="ri-file-list-line"></i>
+                        <span>Certs</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="demo4_people">
+                        <i class="ri-user-4-line"></i>
+                        <span>People</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <section class="dash">
+            <h2>Dash</h2>
+            <hr />
+
+            <div class="cert__data">
+                <div class="cert__list" id="cert-list">
+                    <ul>
+                        <li data-certNumber="1">Certificate 1</li>
+                        <li data-certNumber="2">Certificate 2</li>
+                        <li data-certNumber="3">Certificate 3</li>
+                        <li data-certNumber="4">Certificate 4</li>
+                    </ul>
+                </div>
+                <div class="cert__info" id="cert-info">
+                    <div class="cert__images" id="cert-images">
+                        <img src={cert1.src} alt="Cert 1" />
+                        <img src={cert2.src} alt="Cert 2" />
+                        <img src={cert3.src} alt="cert 3" />
+                        <img src={cert4.src} alt="cert 4" />
+                    </div>
+                    <hr />
+                    <div class="stats">
+                        <div class="">
+                            <p class="label">Usage Rate</p>
+                            <p id="stat-usage">not set</p>
+                        </div>
+                        <div>
+                            <p class="label">Total Awarded</p>
+                            <p id="stat-total">0</p>
+                        </div>
+                        <!-- <div>
+                            <p class="label">Unique Awardees</p>
+                            <p id="stat-unique">0</p>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="awardees">
+                    <h2>Recent Awardees</h2>
+                    <hr />
+                    <!-- Card 1 -->
+                    <div class="card" id="card0">
+                        <div class="avatars">
+                            <img src={avatar1.src} id="avatar-m" alt="male" />
+                            <img src={avatar2.src} id="avatar-f" alt="female" />
+                        </div>
+                        <h3 id="card-name-text">Unknown</h3>
+                        <div class="card__info">
+                            <div>
+                                <p class="card__location label">
+                                    <i class="ri-map-pin-2-line"></i>loaction
+                                </p>
+                                <p class="card__text" id="card-location-text">
+                                    Unknown
+                                </p>
+                            </div>
+                            <div>
+                                <p class="card__date label">
+                                    <i class="ri-calendar-2-line"></i>Award date
+                                </p>
+                                <p class="card__text" id="card-date-text">
+                                    not set
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="card" id="card1">
+                        <div class="avatars">
+                            <img src={avatar1.src} id="avatar-m" alt="male" />
+                            <img src={avatar2.src} id="avatar-f" alt="female" />
+                        </div>
+                        <h3 id="card-name-text">Peter Hanz</h3>
+                        <div class="card__info">
+                            <div>
+                                <p class="card__location label">
+                                    <i class="ri-map-pin-2-line"></i>loaction
+                                </p>
+                                <p class="card__text" id="card-location-text">
+                                    Unknown
+                                </p>
+                            </div>
+                            <div>
+                                <p class="card__date label">
+                                    <i class="ri-calendar-2-line"></i>Award date
+                                </p>
+                                <p class="card__text" id="card-date-text">
+                                    not set
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="card" id="card2">
+                        <div class="avatars">
+                            <img src={avatar1.src} id="avatar-m" alt="male" />
+                            <img src={avatar2.src} id="avatar-f" alt="female" />
+                        </div>
+                        <h3 id="card-name-text">Peter Hanz</h3>
+                        <div class="card__info">
+                            <div>
+                                <p class="card__location label">
+                                    <i class="ri-map-pin-2-line"></i>loaction
+                                </p>
+                                <p class="card__text" id="card-location-text">
+                                    Unknown
+                                </p>
+                            </div>
+                            <div>
+                                <p class="card__date label">
+                                    <i class="ri-calendar-2-line"></i>Award date
+                                </p>
+                                <p class="card__text" id="card-date-text">
+                                    not set
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

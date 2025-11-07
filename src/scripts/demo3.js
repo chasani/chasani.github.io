@@ -244,7 +244,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-    // Pouch Database setup and usage. PS. i stopped was not needed in forsight
+    // Pouch Database setup and usage.
 
     // // create database
     const db = new PouchDB('market');

@@ -1,0 +1,88 @@
+---
+import "../styles/demo4.css";
+import office from "../assets/cert/office.png";
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content={Astro.generator} />
+        <script src="../scripts/demo4.js"></script>
+        <!--=============== REMIXICONS ===============-->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.7.0/remixicon.css"
+        />
+
+        <!--=============== Database ===============-->
+        <script
+            src="https://cdn.jsdelivr.net/npm/pouchdb@9.0.0/dist/pouchdb.min.js"
+        ></script>
+
+        <title>demo4</title>
+    </head>
+    <body>
+        <header></header>
+
+        <section class="login">
+            <div class="log__wrapper">
+                <div class="log__img">
+                    <img src={office.src} alt="login Image" />
+                </div>
+                <div class="reg__form">
+                    <h1>Register</h1>
+
+                    <form action="" id="reg-form">
+                        <label for="username">Username</label>
+                        <span class="input__name">
+                            <i class="ri-user-3-line"></i>
+                            <input
+                                id="username"
+                                type="text"
+                                placeholder="Enter username"
+                                autocomplete="on"
+                                autofocus
+                                required
+                                name="username"
+                            />
+                        </span>
+                        <label for="password1">Password</label>
+                        <span class="reg__password1">
+                            <i class="ri-lock-2-line"></i>
+                            <input
+                                id="password1"
+                                type="password"
+                                placeholder="Enter password"
+                                autocomplete="on"
+                                name="password1"
+                                required
+                            />
+                        </span>
+                        <label for="password2">Re-enter Password</label>
+                        <span class="reg__password2">
+                            <i class="ri-lock-2-line"></i>
+                            <input
+                                id="password2"
+                                type="password"
+                                placeholder="Re-enter password"
+                                autocomplete="on"
+                                name="password2"
+                                required
+                            />
+                        </span>
+
+                        <button type="submit" class="register__btn">
+                            Register</button
+                        >
+                    </form>
+                </div>
+            </div>
+        </section>
+        <div class="popup" id="popup">
+            <div class="title__area">Message</div>
+            <p></p>
+        </div>
+    </body>
+</html>

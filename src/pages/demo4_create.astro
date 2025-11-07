@@ -1,0 +1,136 @@
+---
+import "../styles/demo4.css";
+import cert1 from "../assets/cert/cert1.jpg";
+import cert2 from "../assets/cert/cert2.jpg";
+import cert3 from "../assets/cert/cert3.jpg";
+import cert4 from "../assets/cert/cert4.jpg";
+import certlogo from "../assets/cert/cert_logo.png";
+import avatar1 from "../assets/cert/avatar1.jpg";
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content={Astro.generator} />
+        <script src="../scripts/demo4.js"></script>
+        <!--=============== REMIXICONS ===============-->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.7.0/remixicon.css"
+        />
+
+        <!--=============== Database ===============-->
+        <script
+            src="https://cdn.jsdelivr.net/npm/pouchdb@9.0.0/dist/pouchdb.min.js"
+        ></script>
+
+        <title>demo4</title>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <div class="logo">
+                    <i class="ri-menu-line" id="menu__line"></i>
+                    <img src={certlogo.src} alt="logo" />
+                </div>
+                <div class="links">
+                    <ul>
+                        <li class="logout__link" id="logout-link">logout</li>
+                        <li></li>
+                    </ul>
+                    <img
+                        src={avatar1.src}
+                        alt="user pic"
+                        height="48px"
+                        width="48px"
+                    />
+                    <p id="loginUser"></p>
+                </div>
+            </nav>
+        </header>
+        <section class="side__nav" id="side-nav">
+            <ul>
+                <li>
+                    <a href="demo4_dash">
+                        <i class="ri-home-4-line"></i>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="demo4_create">
+                        <i class="ri-file-list-line"></i>
+                        <span>Certs</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="demo4_people">
+                        <i class="ri-user-4-line"></i>
+                        <span>People</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+        <section class="certificates">
+            <h2>Certificates</h2>
+            <hr />
+            <div class="create__data">
+                <div class="cert__select">
+                    <div class="">
+                        <h4>Select Certificate</h4>
+                        <hr />
+                        <div class="cert__thumbs" id="cert-thumbs">
+                            <img src={cert1.src} alt="" data-thumbNumber="1" />
+                            <img src={cert2.src} alt="" data-thumbNumber="2" />
+                            <img src={cert3.src} alt="" data-thumbNumber="3" />
+                            <img src={cert4.src} alt="" data-thumbNumber="4" />
+                        </div>
+                    </div>
+                    <div class="">
+                        <h4>Choose person</h4>
+                        <hr />
+                        <div class="select__group" id="select-group">
+                            <select name="" id="people" disabled>
+                                <option value="" selected disabled
+                                    >Un-selected</option
+                                >
+                            </select>
+                            <div class="select__icon">
+                                <i class="ri-arrow-down-s-line"></i>
+                            </div>
+                        </div>
+                        <button class="certsave__btn" id="certsave-btn" disabled
+                            >Save</button
+                        >
+                    </div>
+                </div>
+                <div class="cert__preview" id="cert-preview">
+                    <h4>
+                        Preview <span>(Grab name to adjust placement)</span>
+                    </h4>
+
+                    <hr />
+                    <div class="preview__images" id="preview-images">
+                        <img src={cert1.src} alt="Cert 1" />
+                        <img src={cert2.src} alt="Cert 2" />
+                        <img src={cert3.src} alt="cert 3" />
+                        <img src={cert4.src} alt="cert 4" />
+                        <div
+                            class="selected__name"
+                            id="selected-name"
+                            draggable="true"
+                        >
+                            <h2>Un-Selected</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="popup" id="popup">
+            <div class="title__area">Message</div>
+            <p>Certificate Saved !!</p>
+        </div>
+    </body>
+</html>

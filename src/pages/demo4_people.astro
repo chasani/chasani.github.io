@@ -1,0 +1,147 @@
+---
+import "../styles/demo4.css";
+import certlogo from "../assets/cert/cert_logo.png";
+import avatar1 from "../assets/cert/avatar1.jpg";
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content={Astro.generator} />
+        <script src="../scripts/demo4.js"></script>
+        <!--=============== REMIXICONS ===============-->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.7.0/remixicon.css"
+        />
+
+        <!--=============== Database ===============-->
+        <script
+            src="https://cdn.jsdelivr.net/npm/pouchdb@9.0.0/dist/pouchdb.min.js"
+        ></script>
+
+        <title>demo4</title>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <div class="logo">
+                    <i class="ri-menu-line" id="menu__line"></i>
+                    <img
+                        src={certlogo.src}
+                        alt="logo"
+                        height="48px"
+                        width="48px"
+                    />
+                </div>
+                <div class="links">
+                    <ul>
+                        <li class="logout__link" id="logout-link">logout</li>
+                        <li></li>
+                    </ul>
+                    <img
+                        src={avatar1.src}
+                        alt="user pic"
+                        width="48px"
+                        height="48px"
+                    />
+                    <p id="loginUser"></p>
+                </div>
+            </nav>
+        </header>
+        <section class="side__nav" id="side-nav">
+            <ul>
+                <li>
+                    <a href="demo4_dash">
+                        <i class="ri-home-4-line"></i>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="demo4_create">
+                        <i class="ri-file-list-line"></i>
+                        <span>Certs</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="demo4_people">
+                        <i class="ri-user-4-line"></i>
+                        <span>People</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+        <section class="people">
+            <h2>People</h2>
+            <hr />
+            <div class="people__data">
+                <div class="add__person__form">
+                    <h3>New Person</h3>
+                    <hr />
+                    <form action="" id="person-form">
+                        <label for="name"> Name</label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="full name"
+                            autocomplete="on"
+                            required
+                            autofocus
+                        />
+                        <label for="sex"> Sex</label>
+
+                        <input
+                            type="text"
+                            name="sex"
+                            id="sex"
+                            placeholder="Male/female"
+                            autocomplete="on"
+                            required
+                        />
+
+                        <label for="location"> Location</label>
+
+                        <input
+                            type="text"
+                            id="location"
+                            name="location"
+                            placeholder="location"
+                            autocomplete="on"
+                            required
+                        />
+                        <button type="submit"> Add</button>
+                    </form>
+                </div>
+                <div class="table__wrapper">
+                    <table id="people-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Sex</th>
+                                <th>location</th>
+                                <th>Total Awards</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- <tr>
+                                <td>Zane Hassani</td>
+                                <td>male</td>
+                                <td>Locations</td>
+                                <td>appriciation,participation</td>
+                            </tr>
+                            <tr>
+                                <td>Zane Hassani</td>
+                                <td>male</td>
+                                <td>Locations</td>
+                                <td>appriciation,participation</td>
+                            </tr> -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
