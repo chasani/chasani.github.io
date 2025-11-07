@@ -98,7 +98,11 @@ document.addEventListener('DOMContentLoaded', () => {
             showPopup("Sucessfully registered. returning to login in 2 sec..")
 
             setTimeout(() => {
-                window.location.href = 'http://localhost:4321/demo4';
+                // window.location.href = 'http://localhost:4321/demo4';
+
+                // for GIT
+                window.location.href = 'https://chasani.github.io/demo4/';
+
 
             }, 2000);
 
@@ -121,7 +125,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (doc.password === loginData.get('password')) {
                     localStorage.setItem('certUsername', username);
 
-                    window.location.href = 'http://localhost:4321/demo4_dash';
+                    // window.location.href = 'http://localhost:4321/demo4_dash';
+                    window.location.href = 'https://chasani.github.io/demo4_dash/';
+
 
                 } else {
                     showPopup('Username or paswword incorrect')
@@ -145,6 +151,13 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('#loginUser').innerHTML = loggedinUser
     }
 
+    // for GIT
+    if ((page != 'https://chasani.github.io/demo4/' && page != 'https://chasani.github.io/demo4_dash/') && loggedinUser) {
+        // return
+
+        document.querySelector('#loginUser').innerHTML = loggedinUser
+    }
+
 
 
     // logout
@@ -153,7 +166,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (logoutLink) {
         logoutLink.addEventListener('click', () => {
             localStorage.removeItem('certUsername')
-            window.location.href = 'http://localhost:4321/demo4';
+            // window.location.href = 'http://localhost:4321/demo4';
+
+            // for GIT
+            window.location.href = 'https://chasani.github.io/demo4/';
 
 
         })
