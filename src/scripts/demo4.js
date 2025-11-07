@@ -623,6 +623,7 @@ document.addEventListener('DOMContentLoaded', () => {
     certThumbs.forEach(thumb => {
         thumb.addEventListener('click', () => {
             removeClass(certThumbs, 'cert__selected')
+            selectedName.removeAttribute('style')
             thumb.classList.add('cert__selected')
 
             // enable select dropdown
