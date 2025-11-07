@@ -5,16 +5,30 @@ document.addEventListener('DOMContentLoaded', () => {
     const loggedinUser = localStorage.getItem('certUsername')
     const page = window.location.href
     if ((page != 'http://localhost:4321/demo4' && page != 'http://localhost:4321/demo4_reg') && !loggedinUser) {
-        window.location.href = 'demo4';
-        // return
+        // window.location.href = 'http://localhost:4321/demo4';
+
 
     }
 
     if ((page === 'http://localhost:4321/demo4' || page === 'http://localhost:4321/demo4_reg') && loggedinUser) {
-        window.location.href = 'http://localhost:4321/demo4_dash';
-        // return
+        // window.location.href = 'http://localhost:4321/demo4_dash';
 
     }
+
+
+    // for GIT
+    if ((page != 'https://chasani.github.io/demo4/' && page != 'https://chasani.github.io/demo4_reg/') && !loggedinUser) {
+        window.location.href = 'https://chasani.github.io/demo4/'
+
+    }
+
+
+    if ((page === 'https://chasani.github.io/demo4/' || page === 'https://chasani.github.io/demo4_reg/') && loggedinUser) {
+        window.location.href = 'https://chasani.github.io/demo4_dash/'
+
+    }
+
+
 
 
     // initialise db
